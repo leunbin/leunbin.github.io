@@ -1,8 +1,26 @@
-/* From Uiverse.io by boryanakrasteva */ 
+.home-header {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  padding-bottom: 0.5rem;
+}
+
+.home-main {
+  overflow-y: auto;
+  flex: 1;
+  margin: 2rem;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .card {
-  width: 60vw;
-  height: 40vw;
-  background: #FFE6EB;
+  width: 55vw;
+  height: 60vh;
+  background: #eeecec;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -14,7 +32,8 @@
   display: flex;
   width: 100%;
   height: auto;
-  padding: 1rem;
+  padding: 0.5rem;
+  align-items: center;
 }
 
 .circles,
@@ -22,16 +41,18 @@
   height: 100%;
   display: flex;
   align-items: center;
+  padding-left: 0.2rem;
 }
 
 .circles {
-  width: 15%;
+  width: 10%;
   gap: 1rem;
+  justify-content: space-evenly;
 }
 
 .c {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   box-shadow: inset 2px 2px 5px rgba(235, 235, 235, 0.356);
 }
@@ -49,7 +70,7 @@
 }
 
 .browser {
-  width: 80%;
+  width: 85%;
   padding: 5px;
   display: flex;
   gap: 10px;
@@ -70,7 +91,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: rgb(88, 88, 88);
   box-shadow: inset 2px 2px 2px #05050525;
 }
@@ -81,24 +102,68 @@
 }
 
 .card-main {
-  padding: 4rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   height: 100%;
   justify-content: space-evenly;
+  gap: 2rem;
 }
 
 .profile-img {
   display: flex;
   align-items: center;
-  background-color: aliceblue;
-  border: 2px solid #DB7093;
+  background-color: #fdf6f6;
+  border: 2px solid #505050;
   border-radius: 50%;
-  width: 20vw;
-  height: 20vw;
+  width: 15vw;
+  height: 15vw;
 }
 
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
 .profile-img img {
   width: 100%;
   height: 100%;
+}
+
+.mbti-title, .interest-title, .goal-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.mini-bio {
+  display: flex;
+  flex-direction: column;
+  color: #3c3c3c;
+  gap: 0.5rem;
+  border-left: 2px solid #6e6e6e;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.mbti, .interest, .goal {
+  display: flex;
+  flex-direction: column;
+  /* padding: 0.5rem; */
+  gap: 0.1rem;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.mbti-info {
+  color: #3c3c3c;
+}
+
+.interest-info {
+  color: #3c3c3c;
+}
+
+.goal-info {
+  color: #3c3c3c;
+  white-space: pre-line;
+  word-wrap: break-word;
 }

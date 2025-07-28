@@ -12,10 +12,10 @@
 
 .blog-title {
   color: #BF835F;
-  font-size: 3vw;
+  font-size: 2vw;
   /* font-family: 'Georgia', serif; */
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-  margin: 5rem;
+  margin: 3rem;
 }
 
 .nav-buttons {
@@ -112,6 +112,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: #FFF1D6;
 }
 
 .searching-main{
@@ -220,7 +221,7 @@
   padding-left: 0.2rem;
   border: none;
   outline: none;  
-  background-color: transparent;
+  background-color: #FFF1D6;
 }
 
 .dropbox.open .menu li:nth-child(1) { animation-delay: 0.05s; }
