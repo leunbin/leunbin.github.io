@@ -2,10 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>은빈이의 블로그</title>
+  <link rel="stylesheet" href="./layout/layout_style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./home_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./js/include.js" defer></script>
 </head>
-<body>
+<body class="blog-body">
+  <div data-include="layout/header.html"></div>
+  <div data-include="layout/searchingbar.html"></div>
   
+  <div class="home-main">
+    <div class="card">
+      <div class="card-header">
+        <div class="circles"> 
+          <div class="c"></div>
+          <div class="c"></div>
+          <div class="c"></div>
+        </div>
+  
+        <div class="browser">
+          <div class="chevrons">
+            <svg viewBox="0 0 20 20" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-name="20" id="_20">
+              <path transform="translate(6.25 3.75)" d="M0,6.25,6.25,0l.875.875L1.75,6.25l5.375,5.375L6.25,12.5Z" id="Fill"></path>
+            </svg>
+            <svg viewBox="0 0 20 20" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-name="20" id="_20">
+              <path transform="translate(6.625 3.75)" d="M7.125,6.25.875,12.5,0,11.625,5.375,6.25,0,.875.875,0Z" id="Fill"></path>
+            </svg>
+          </div>
+  
+          <div class="search-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16.89 16.887">
+              <path id="Fill" d="M16.006,16.887h0l-4.743-4.718a6.875,6.875,0,1,1,.906-.906l4.719,4.744-.88.88ZM6.887,1.262a5.625,5.625,0,1,0,5.625,5.625A5.631,5.631,0,0,0,6.887,1.262Z" transform="translate(0.003 0)"></path>
+            </svg>
+              leunbin.github.io
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-main">
+        <div class="profile-img">
+          <img src="./img/profileimg.svg" alt="profile img">
+        </div>
+
+        <div class="profile-content">
+          <span class="mini-bio">한 줄 소개 입니다.</span>
+          <div class="mbti">
+            <h3 class="mbti-title">MBTI</h3>
+            <span class="mbti-info">INTP</span>
+          </div>
+
+          <div class="interest">
+            <h3 class="interest-title">INTERESTS</h3>
+            <span class="interest-info">관심사 입니다.</span>
+          </div>
+
+          <div class="goal">
+            <h3 class="goal-title">GOAL</h3>
+            <span class="goal-info">목표 입니다.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1>테스트입니다.</h1>
+  </div>
 </body>
 </html>

@@ -1,0 +1,104 @@
+/* From Uiverse.io by boryanakrasteva */ 
+.card {
+  width: 60vw;
+  height: 40vw;
+  background: #FFE6EB;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+
+.circles,
+.browser {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.circles {
+  width: 15%;
+  gap: 1rem;
+}
+
+.c {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 5px rgba(235, 235, 235, 0.356);
+}
+
+.c:first-child {
+  background-color: red;
+}
+
+.c:nth-child(2) {
+  background-color: rgb(204, 167, 4);
+}
+
+.c:last-child {
+  background-color: green;
+}
+
+.browser {
+  width: 80%;
+  padding: 5px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.chevrons {
+  display: flex;
+}
+
+.search-bar {
+  position: relative;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: rgb(88, 88, 88);
+  box-shadow: inset 2px 2px 2px #05050525;
+}
+
+.search-bar svg {
+  position: absolute;
+  left: 10px;
+}
+
+.card-main {
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.profile-img {
+  display: flex;
+  align-items: center;
+  background-color: aliceblue;
+  border: 2px solid #DB7093;
+  border-radius: 50%;
+  width: 20vw;
+  height: 20vw;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,15 @@
+.blog-body{
+  background-color: #FFF1D6;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+.home-main {
+  overflow-y: auto;
+  flex: 1;
+  margin: 2rem;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
