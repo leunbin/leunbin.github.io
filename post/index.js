@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (!path || !category) return;
 
-  const raw = await fetchMarkdown(`posts/${category}/${path}.md`);
+  const raw = await fetchMarkdown(`/posts/${category}/${path}.md`);
 
   const markdown = raw.replace(/^---[\r\n]+([\s\S]*?)---[\r\n]+/, '').trim();
 

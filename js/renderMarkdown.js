@@ -1,4 +1,5 @@
 export async function fetchPosts(category) {
+  console.log(category)
   const jsonPath = `/posts/${category}/index.json`;
   console.log(jsonPath)
   try {
