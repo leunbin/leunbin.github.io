@@ -1,6 +1,6 @@
 /* header css */
 .blog-header {
-  /* height: 20vh; */
+  height: auto;
   width: 100%;
   background-color: #FFF1D6;
   display: flex;
@@ -20,9 +20,9 @@
 
 .nav-buttons {
   display: flex;
-  width: 100%;
+  width: auto;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 3rem;
   margin: 0 5rem 0 5rem;
 }

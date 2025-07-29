@@ -3,18 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>은빈이의 블로그</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="module" src="../js/index.js"></script>
   <link rel="stylesheet" href="../layout/layout_style.css">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../posts_style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="../js/include.js" defer></script>
 </head>
-<body class="blog-body">
-  <div data-include="../layout/header.html"></div>
-  <h1>웹 개발</h1>
+<body class="post-page">
+  <div class="post-header">
+    <p class="blog-name">얼렁뚱땅 공부일지</p>
+    <div data-include="../layout/navigation.html"></div>
+  </div>
+  <div class="post-body">
+    <h1 id="post-category">WEB</h1>
+    <div id="post-count"></div>
+    <div id="post-index">
+      <div id="post-index-num">번호</div>
+      <div id="post-index-title">제목</div>
+    </div>
+    <div id="post-list"></div>
 
-  <!-- <div data-include="main"></div>
-
-  <div data-include="laytou/footer.html"></div> -->
+  </div>
 </body>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.post-header');
+    const body = document.querySelector('.post-body');
+
+    if (header && body) {
+      const headerHeight = header.offsetHeight;
+      body.style.marginTop = `${headerHeight}px`;
+    }
+  });
+</script>
 </html>

@@ -1,0 +1,75 @@
+.post-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF1D6;
+  font-family: "Saira", sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: auto;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #FFF1D6;
+  padding: 2rem 0;
+}
+
+.blog-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #573C36;
+  margin: 0 5rem;
+}
+
+.post-body {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 5rem;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+#post-count {
+  color: #3c3c3c;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid #573C36;
+}
+
+.highlight {
+  color: #FF8200;
+  font-size: 1.5rem;
+}
+
+#post-index, .post-item {
+  display: flex;
+  padding: 0.5rem;
+  border-bottom: 2px solid #573C36;
+  font-weight: 500;
+}
+
+#post-index-num, #post-index-title, .post-num, .post-title  {
+  color: #464646;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#post-index-num, .post-num {
+  width: 5%;
+}
+
+#post-index-title, .post-title {
+  flex: 1;
+}
+
+.post-item {
+  border-bottom: 1px solid #d2d2d2	;
+}
