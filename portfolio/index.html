@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="./portfolio_style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
@@ -20,10 +23,10 @@
       </div>
       <div class="portfolio-right">
         <div class="portfolio-right-top">
-          <img src="../img/yamspoonbackground.png">
+          <img src="../img/yamspoon/yamspoonbackground.png">
         </div>
         <div class="portfolio-right-bottom">
-          <img src="../img/2stepbackground.png">
+          <img src="../img/2step/2stepbackground.png">
         </div>
       </div>
     </div>
@@ -35,21 +38,55 @@
         <div class="twostep-title">
           <h1>2STEP</h1>
         </div>
-        <button class="github-button" type="button" onclick="location.href='https://github.com/leunbin/2step'">
+        <button class="github-button" type="button" onclick="window.open('https://github.com/leunbin/2step', '_blank')">
           <span class="github-svg">
             <img src="../img/github-mark-white.svg">
           </span>
-          <span class="BG"></span>
+          <span class="text">https://github.com/leunbin/2step</span>
         </button>
         <div class="tag">BACKEND</div>
       </div>
       <div class="twostep-body">
-        <div class="twostep-img">
-          <img src="../img/2step_demo.gif" alt="2step">
+        <div class="twostep-left">
+          <div class="twostep-img">
+            <img src="../img/2step/2step_demo.gif" alt="2step">
+          </div>
+          <div class="twostep-description">
+            <b>앨리스 부트캠프 팀프로젝트로 제작한 웹 애플리케이션입니다.</b><br>
+            트렌디한 운동화를 판매하는 온라인 쇼핑몰로 최소 기능(MVP)으로 시작해 CRUD 및 쇼핑몰의 핵심 기능을 구현했습니다.
+          </div>
         </div>
-        <p>2step 본문입니다.</p>
+        <div class="twostep-right">2step 본문입니다.</p>
       </div>
     </div>
   </div>
+
+  <div class="yamspoon">
+    <div class="yamspoon-head">
+      <div class="yamspoon-title">
+        <h1>YAMSPOON</h1>
+      </div>
+      <button class="github-button" type="button" onclick="window.open('https://github.com/leunbin/yamspoon', '_blank')">
+        <span class="github-svg">
+          <img src="../img/github-mark-white.svg">
+        </span>
+        <span class="text">https://github.com/leunbin/yamspoon</span>
+      </button>
+      <div class="tag">BACKEND</div>
+    </div>
+    <div class="yamspoon-body">
+      <div class="yamspoon-right">2step 본문입니다.</p>
+      </div>
+      <div class="yamspoon-left">
+        <div class="yamspoon-img">
+          <img src="../img/yamspoon/yamspoon_demo.gif" alt="2step">
+        </div>
+        <div class="yamspoon-description">
+          <b>앨리스 부트캠프 팀프로젝트로 제작한 웹 애플리케이션입니다.</b><br>
+          트렌디한 운동화를 판매하는 온라인 쇼핑몰로 최소 기능(MVP)으로 시작해 CRUD 및 쇼핑몰의 핵심 기능을 구현했습니다.
+        </div>
+      </div>
+  </div>
+</div>
 </body>
 </html>
