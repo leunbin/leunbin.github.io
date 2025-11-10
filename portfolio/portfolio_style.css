@@ -345,8 +345,8 @@
 .twostep-tags img,
 .yamspoon-tag img,
 .mapu-tag img {
-  width: 105px; 
-  height: auto;
+  width: auto; 
+  height: 2rem;
   transition: transform 0.2s ease;
 }
 
@@ -358,11 +358,71 @@
 
 .portfolio-footer {
   width: 100%;
-  height: 45rem;
-  background-color: gray;
+  height: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .footer-content{
   width: 100%;
-  height: 60%;
+  height: 70%;
+  background-color: #A2A2A2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content-h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.content-h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.footer-icons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  align-items: center;
+  justify-content: baseline;
+  gap: 1rem;
+}
+
+.footer-link {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-self: center;
+}
+
+.footer-github-btn,
+.footer-email-btn {
+  width: auto;
+  height: 2rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.footer-github-btn img,
+.footer-email-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+.footer-github-btn:hover .text,
+.footer-email-btn:hover .text {
+  opacity: 1;
 }
