@@ -1,3 +1,5 @@
+* {box-sizing: border-box;}
+
 .portfolio-page {
   display: flex;
   flex-direction: column;
@@ -5,13 +7,15 @@
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  /* padding: 0 2rem; */
+  margin: 0;
 }
 
 .portfolio-head {
   width: 100%;
   height: 40rem;
   display: flex;
-  padding: 0.5rem;
+  padding: 0.5rem 2.5rem;
   align-items: stretch;
   box-sizing: border-box;
 }
@@ -74,9 +78,7 @@
 
 .portfolio-left {
   height: 100%;
-  width: 30%; 
-  padding: 1rem;
-  border-radius: 2rem;
+  width: 30%;
   display: flex; 
   position: relative;
   z-index: 1;
@@ -98,7 +100,6 @@
   width: 100%;
   z-index: 1;
   position: relative;
-  padding: 1rem;
 }
 
 .portfolio-left img,
@@ -108,7 +109,7 @@
   height: 100%;    
   object-fit: cover;
   display: block;
-  border-radius: 2rem;
+  border-radius: 16px;
 }
 
 .portfolio-left,
@@ -120,15 +121,17 @@
   box-shadow: 0 10px 30px rgba(0,0,0,.12), 0 2px 6px rgba(0,0,0,.08);
   overflow: hidden;
   border: 1px solid rgba(0,0,0,.06);
+  padding: 0.5rem
 }
 
 .portfolio-body {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 2.5rem;
 }
 
 .twostep,
-.yamspoon {
+.yamspoon,
+.mapu {
   display: flex;
   width: 100%;
   padding: 1rem;
@@ -136,7 +139,8 @@
 }
 
 .twostep-head,
-.yamspoon-head {
+.yamspoon-head,
+.mapu-head {
   display: flex;
   padding: 1rem;
   gap: 1rem;
@@ -144,12 +148,14 @@
   justify-content: flex-start;
 }
 
-.twostep-title h1
-.yamspoon-title h1 {
+.twostep-title h1,
+.yamspoon-title h1,
+.mapu-title h1 {
   font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 2.5rem);
 }
 
-.tag {
+.backend-tag {
   display: inline-block; 
   padding: 0.25rem 0.75rem;
   font-size: 0.8rem;
@@ -160,6 +166,19 @@
   text-transform: uppercase; 
   letter-spacing: 0.05em;
 }
+
+.frontend-tag {
+  display: inline-block; 
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #1E90FF; 
+  border-radius: 9999px; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em;
+}
+
 
 
 .github-button {
@@ -220,6 +239,7 @@
   opacity: 0;
   transition: all 0.25s linear;
   border-color: #ffffff;
+  width: max-content;
 }
 
 .github-button:hover .text {
@@ -227,36 +247,122 @@
 }
 
 .twostep-body,
-.yamspoon-body {
+.yamspoon-body,
+.mapu-body {
   display: flex;
   width: 100%;
   gap: 2rem;
   padding: 1rem;
+  border-bottom: 2px dashed #ccc;
+  box-sizing: border-box;
 }
 
 .twostep-left,
-.yamspoon-left {
+.yamspoon-left,
+.mapu-left {
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
   gap: 1rem;
   width: 50rem;
 }
 
 .twostep-img,
-.yamspoon-img {
+.yamspoon-img,
+.mapu-img {
   width: 100%;
   height: 25rem;
   background-color: rebeccapurple;
 }
 
 .twostep-img img,
-.yamspoon-img img {
+.yamspoon-img img,
+.mapu-img img {
   width: 100%;
   height: 100%;
 }
 
 .twostep-description,
-.yamspoon-description {
+.yamspoon-description,
+.mapu-description {
   width: 100%;
 }
 
+.twostep-right,
+.yamspoon-right,
+.mapu-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.twostep-subtitle,
+.yamspoon-subtitle,
+.mapu-subtitle {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #353535;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.twostep-right-role p,
+.yamspoon-right-role p,
+.mapu-right-role p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-left: 0.4rem;
+  padding-bottom: 0.4rem;
+  position: relative;
+}
+
+.twostep-right-role p::before,
+.yamspoon-right-role p::before,
+.mapu-right-role p::before {
+  content: "•";
+  position: absolute;
+  left: -0.2rem;
+  color: #999;
+}
+
+.twostep-right-retro,
+.yamspoon-right-retro,
+.mapu-right-retro {
+  box-sizing: border-box;
+  line-height: 2;
+  padding-bottom: 0.8rem;
+}
+
+.twostep-tags,
+.yamspoon-tags,
+.mapu-tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.twostep-tags img,
+.yamspoon-tag img,
+.mapu-tag img {
+  width: 105px; 
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.twostep-tags img:hover,
+.yamspoon-tag img:hover,
+.mapu-tag img:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-footer {
+  width: 100%;
+  height: 45rem;
+  background-color: gray;
+}
+
+.footer-content{
+  width: 100%;
+  height: 60%;
+}

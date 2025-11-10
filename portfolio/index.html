@@ -12,27 +12,28 @@
 <body class="portfolio-page">
   <div class="portfolio-head">
     <div class="portfolio-title">
-      <h1>Discover<br>My <span style="color:#666666">Signiture</span><br>Project</h1>
+      <h1>Discover<br>My <span style="color:#666666">Signature</span><br>Project</h1>
       <p>지금까지 진행한 개발 프로젝트를<br>정리한 개인 아카이브입니다.</p>
       <button class="home-btn" type="button" onclick="location.href='/'">Home</button>
     </div>
 
     <div class="portfolio-layout">
       <div class="portfolio-left">
-        <img src="../img/mapubackground.png">
+        <img src="../img/mapu/mapubackground.png" alt="MAPU background">
       </div>
       <div class="portfolio-right">
         <div class="portfolio-right-top">
-          <img src="../img/yamspoon/yamspoonbackground.png">
+          <img src="../img/yamspoon/yamspoonbackground.png" alt="YamSpoon background">
         </div>
         <div class="portfolio-right-bottom">
-          <img src="../img/2step/2stepbackground.png">
+          <img src="../img/2step/2stepbackground.png" alt="2STEP background">
         </div>
       </div>
     </div>
   </div>
 
   <div class="portfolio-body">
+    <!-- 2STEP -->
     <div class="twostep">
       <div class="twostep-head">
         <div class="twostep-title">
@@ -40,59 +41,195 @@
         </div>
         <button class="github-button" type="button" onclick="window.open('https://github.com/leunbin/2step', '_blank')">
           <span class="github-svg">
-            <img src="../img/github-mark-white.svg">
+            <img src="../img/github-mark-white.svg" alt="GitHub">
           </span>
           <span class="text">https://github.com/leunbin/2step</span>
         </button>
-        <div class="tag">BACKEND</div>
+        <div class="backend-tag">BACKEND</div>
       </div>
       <div class="twostep-body">
         <div class="twostep-left">
           <div class="twostep-img">
-            <img src="../img/2step/2step_demo.gif" alt="2step">
+            <img src="../img/2step/2step_demo.gif" alt="2STEP demo">
           </div>
           <div class="twostep-description">
-            <b>앨리스 부트캠프 팀프로젝트로 제작한 웹 애플리케이션입니다.</b><br>
+            <b>앨리스 부트캠프 1차 팀 프로젝트로 제작한 웹 애플리케이션입니다.</b><br>
             트렌디한 운동화를 판매하는 온라인 쇼핑몰로 최소 기능(MVP)으로 시작해 CRUD 및 쇼핑몰의 핵심 기능을 구현했습니다.
           </div>
         </div>
         <div class="twostep-right">
-          <h3>My Role & Key Work</h3>
-          <div class="twostep-right-body">
-            <p><b>주문 API</b> 설계 및 CRUD 기능 구현</p>
-            <p>MongoDB <b>데이터베이스 환경 설정</b> 및 연결 관리</p>
-            <p>기존 상품/사용자 API와 <b>주문 흐름 통합</b></p>
+          <div class="twostep-tags">
+            <div class="twostep-tag">
+              <img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" alt="Node.js" />
+            </div>
+            <div class="twostep-tag">
+              <img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white" alt="Express" />
+            </div>
+            <div class="twostep-tag">
+              <img src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white" alt="MongoDB" />
+            </div>
+            <div class="twostep-tag">
+              <img src="https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=black" alt="Swagger" />
+            </div>
+          </div>
+          <div class="twostep-subtitle">🧩 My Role & Key Work</div>
+          <div class="twostep-right-role">
+            <p><b>주문 API</b> : Express 기반 RESTful 구조 설계 및 CRUD 기능 구현</p>
+            <p><b>MongoDB</b> : Mongoose Schema 설계 및 데이터베이스 연결 관리</p>
+            <p><b>주문 흐름 통합</b> : 상품과 사용자 API와 주문 흐름 통합을 통해 데이터 일관성 확보</p>
+            <p><b>문서화</b> : Notion과 Swagger를 활용한 API 문서화로 FE·BE 협업 효율성 향상</p>
+          </div>
+          <div class="twostep-subtitle">💭 Retrospective</div>
+          <div class="twostep-right-retro">
+            첫 팀 프로젝트로 백엔드 전 과정을 직접 경험했습니다.
+            <b>CRUD 구현</b>을 처음 시도하면서 데이터 흐름을 이해하게 되었고
+            <b>데이터베이스 설계 → API 개발 → Swagger 문서화</b>까지의 전체 프로세스를 처음부터 끝까지 구축해보며
+            백엔드 개발의 구조와 협업 흐름을 몸소 익혔습니다.
+            이 경험을 통해 단순한 기능 구현을 넘어, 데이터 설계 중심 사고를 갖추는 계기가 되었습니다.
           </div>
         </div>
       </div>
     </div>
 
-  <div class="yamspoon">
-    <div class="yamspoon-head">
-      <div class="yamspoon-title">
-        <h1>YAMSPOON</h1>
+    <!-- YAMSPOON -->
+    <div class="yamspoon">
+      <div class="yamspoon-head">
+        <div class="yamspoon-title">
+          <h1>YAMSPOON</h1>
+        </div>
+        <button class="github-button" type="button" onclick="window.open('https://github.com/leunbin/yamspoon', '_blank')">
+          <span class="github-svg">
+            <img src="../img/github-mark-white.svg" alt="GitHub">
+          </span>
+          <span class="text">https://github.com/leunbin/yamspoon</span>
+        </button>
+        <div class="backend-tag">BACKEND</div>
       </div>
-      <button class="github-button" type="button" onclick="window.open('https://github.com/leunbin/yamspoon', '_blank')">
-        <span class="github-svg">
-          <img src="../img/github-mark-white.svg">
-        </span>
-        <span class="text">https://github.com/leunbin/yamspoon</span>
-      </button>
-      <div class="tag">BACKEND</div>
+      <div class="yamspoon-body">
+        <div class="yamspoon-left">
+          <div class="yamspoon-img">
+            <img src="../img/yamspoon/yamspoon_demo.gif" alt="YAMSPOON demo">
+          </div>
+          <div class="yamspoon-description">
+            <b>앨리스 부트캠프 2차 팀 프로젝트로 제작한 웹 애플리케이션입니다.</b><br>
+            사용자가 가진 재료를 이용해 레시피를 검색하고 레시피 작성 및 이미지 업로드, 좋아요와 북마크 등 사용자 상호작용 기능을 구현했습니다.
+          </div>
+        </div>
+        <div class="yamspoon-right">
+          <div class="yamspoon-tags">
+            <div class="yamspoon-tag">
+              <img src="https://img.shields.io/badge/AWS%20S3-569A31?logo=amazonaws&logoColor=white" alt="AWS S3" />
+            </div>
+            <div class="yamspoon-tag">
+              <img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" alt="Node.js" />
+            </div>
+            <div class="yamspoon-tag">
+              <img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white" alt="Express" />
+            </div>
+            <div class="yamspoon-tag">
+              <img src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white" alt="MongoDB" />
+            </div>
+            <div class="yamspoon-tag">
+              <img src="https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=black" alt="Swagger" />
+            </div>
+            <div class="yamspoon-tag">
+              <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript" />
+            </div>
+          </div>
+          <div class="yamspoon-subtitle">🧩 My Role & Key Work</div>
+          <div class="yamspoon-right-role">
+            <p><b>회원 기능</b> : 로그인, 회원가입, 탈퇴, 마이페이지, 북마크 등 핵심 인증/인가 기능 구현</p>
+            <p><b>데이터 설계</b> : Mongoose Schema 기반 데이터베이스 구조 설계 및 관계 설정</p>
+            <p><b>문서화</b> : Notion, Google Sheets, Swagger를 이용한 API 명세 작성 및 협업 효율성 강화</p>
+            <p><b>인증 시스템</b> : JWT 기반 로그인 및 세션 관리, 이메일 인증 프로세스 설계</p>
+          </div>
+
+          <div class="yamspoon-subtitle">💭 Retrospective</div>
+          <div class="yamspoon-right-retro">
+            <p>
+              두 번째 엘리스 프로젝트로 4명의 프론트엔드와 2명의 백엔드가 함께 협업하는 환경에서 요구사항 조율과 일정 관리의 중요성을 크게 느꼈습니다.
+              프론트 쪽에서 추가 기능 요청이 많았지만 한정된 기간 내에서 우선순위를 정해 개발 범위를 명확히 조율하여 실무에 가까운 협업을 경험했습니다.
+            </p>
+            <p>
+              JWT 토큰 기반의 회원 인증과 메일 인증(NodeMailer)을 적용해 사용자 인증 절차를 강화하여 서버와 클라이언트 간의 데이터 흐름과 인증 구조를 직접 이해할 수 있었습니다. 
+              또한 사용자 상호작용 기능(좋아요·북마크)을 통해 상태 관리와 비동기 통신 구조를 경험했습니다.
+            </p>
+            <p>
+              단순히 기능 구현을 넘어 주어진 상황에서 팀원 간의 의견 공유를 통해 효율적으로 프로젝트를 완성하였습니다.
+              이후 다른 프로젝트에서도 API 명세와 필수 기능 중심의 협업을 실천하게 되었습니다.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="yamspoon-body">
-      <div class="yamspoon-right">2step 본문입니다.</p>
-      </div>
-      <div class="yamspoon-left">
-        <div class="yamspoon-img">
-          <img src="../img/yamspoon/yamspoon_demo.gif" alt="2step">
+
+    <!-- MAPU -->
+    <div class="mapu">
+      <div class="mapu-head">
+        <div class="mapu-title">
+          <h1>MAPU</h1>
         </div>
-        <div class="yamspoon-description">
-          <b>앨리스 부트캠프 팀프로젝트로 제작한 웹 애플리케이션입니다.</b><br>
-          트렌디한 운동화를 판매하는 온라인 쇼핑몰로 최소 기능(MVP)으로 시작해 CRUD 및 쇼핑몰의 핵심 기능을 구현했습니다.
+        <button class="github-button" type="button" onclick="window.open('https://github.com/leunbin/MAPU-Frontend', '_blank')">
+          <span class="github-svg">
+            <img src="../img/github-mark-white.svg" alt="GitHub">
+          </span>
+          <span class="text">https://github.com/leunbin/MAPU-Frontend</span>
+        </button>
+        <div class="frontend-tag">FRONTEND</div>
+      </div>
+      <div class="mapu-body">
+        <div class="mapu-left">
+          <div class="mapu-img">
+            <img src="../img/mapu/mapeditdemo.gif" alt="MAPU edit demo">
+          </div>
+          <div class="mapu-description">
+            <b>교내 동아리에서 진행한 웹 애플리케이션 프로젝트입니다.</b><br>
+            사용자가 지도 기반으로 다양한 정보를 시각화하고 공유할 수 있는 커뮤니티 플랫폼으로 공유 기능을 통한 동시 편집, 뷰어 등 함께 지도를 제작할 수 있습니다.
+          </div>
+        </div>
+        <div class="mapu-right">
+          <div class="mapu-tags">
+            <div class="mapu-tag">
+              <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React" />
+            </div>
+            <div class="mapu-tag">
+              <img src="https://img.shields.io/badge/SCSS-CC6699?logo=sass&logoColor=white" alt="SCSS" />
+            </div>
+            <div class="mapu-tag">
+              <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+            </div>
+            <div class="mapu-tag">
+              <img src="https://img.shields.io/badge/Kakao%20Map-F7E600?logo=kakao&logoColor=000000" alt="Kakao Map" />
+            </div>
+          </div>
+          <div class="mapu-subtitle">🧩 My Role & Key Work</div>
+          <div class="mapu-right-role">
+            <p><b>탐색·타임라인 UX</b> : Explore & Timeline 페이지 구조 파악 및 키워드 기반 필터링 연동</p>
+            <p><b>상태 관리</b> : Zustand로 지도 도구와 색상, 선택한 키워드 상태를 전역으로 관리</p>
+            <p><b>키워드 관리</b> : 선택한 키워드는 쿠키로 저장하여 새로고침 및 로그인 인증 상태 변경 후에도 유지되도록 설계</p>
+            <p><b>지도 렌더링</b> : Kakao Maps SDK 로드/언마운트, 초기 뷰 상태 관리(로딩/에러)</p>
+            <p><b>편집도구</b> : marker / polyline / polygon 그리기, 색상·두께 실시간 커스터마이징</p>
+          </div>
+          <div class="mapu-subtitle">💭 Retrospective</div>
+          <div class="mapu-right-retro">
+            <p>
+              첫 프론트엔드 경험으로 이전에 백엔드만 담당했을 때 API 명세서나 스키마를 제때 전달하지 못해 프론트 팀이 얼마나 불편했을지 미처 실감하지 못했었습니다.
+              직접 프론트에서 API 연동을 경험하며 개발 단계마다 명확한 커뮤니케이션과 문서화의 중요성을 체감했습니다.
+            </p>
+            <p>
+              또한 팀 내에서 자신의 업무를 도와달라는 요청이 있어 처음에는 수용하여 완성도에 차질이 없도록 협력했지만 추가 요청에 대해서는 제 일정에 영향을 줄 수 있다고 판단해 다른 팀원들과 조율하여 우선순위를 명확히 조정했습니다.
+              이 과정을 통해 협업은 단순한 소통이 아닌 서로의 책임과 일정을 존중하며 조율하는 과정임을 배웠습니다.
+            </p>
+          </div>
         </div>
       </div>
-  </div>
-</div>
+    </div>
+  </div> 
+  <footer class="portfolio-footer">
+    <div class="footer-content">
+      <h1>Grow together, one step at a time</h1>
+      <h2>Get updates on my latest studies, projects and thoughts</h2>
+    </div>
+  </footer>
 </body>
 </html>
