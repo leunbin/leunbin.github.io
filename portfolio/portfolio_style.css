@@ -414,6 +414,11 @@
   justify-content: center;
   transition: all 0.25s ease;
   position: relative;
+  cursor: pointer;
+}
+
+.footer-email-btn{
+  border: none;
 }
 
 .footer-github-btn img,
@@ -426,3 +431,40 @@
 .footer-email-btn:hover .text {
   opacity: 1;
 }
+
+.email-text{
+  display: none;
+}
+
+.footer-copy{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#copy-msg {
+  position: absolute;
+  bottom: 5rem;
+  padding: 0.5rem;
+  background-color: #3c3c3c;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 2px;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+  border-color: #ffffff;
+  width: max-content;
+  pointer-events: none;
+}
+
+#copy-msg.show{
+  opacity: 0.9;
+  visibility: visible;
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
+

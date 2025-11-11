@@ -237,13 +237,29 @@
           <span class="text">Visit My Github!</span>
         </a>
         <span>|</span>
-        <a href="mailto:silverbin2105@gmail.com" class="footer-email-btn" aria-label="Email">
+        <span class="email-text">silverbin2105@gmail.com</span>
+        <button class="footer-email-btn">
           <img src="../img/empty-email-svgrepo-com.svg" alt="Email">
-          <span class="text">Contact me!</span>
-        </a>    
+          <span class="text">Copy Email!</span>
+        </button>
       </div>
-      <span class="copy-text">© 2025 Eunbin Lee. All rights reserved.</span>
+      <div class="footer-copy">
+        <span id="copy-msg">이메일 복사 완료!</span>
+        <span class="copy-text">© 2025 Eunbin Lee. All rights reserved.</span>
+      </div>
     </div>
   </footer>
 </body>
+<script>
+  const btn = document.querySelector(".footer-email-btn");
+  const email = document.querySelector(".email-text");
+  const msg = document.getElementById("copy-msg");
+
+  btn.addEventListener("click", () => {
+    navigator.clipboard.writeText(email.textContent).then(() => {
+      msg.classList.add("show");
+      setTimeout(() => msg.classList.remove("show"), 1500);
+    });
+  });
+</script>
 </html>
