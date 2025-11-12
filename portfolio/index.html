@@ -335,6 +335,38 @@
     });
   });
 
+  function smoothScrollTo(targetY, duration = 600) {
+    const startY = window.pageYOffset;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const dest = Math.max(0, Math.min(targetY, maxScroll));
+    const distance = dest - startY;
+    const startTime = performance.now();
+
+    const ease = t => (t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2);
+
+    let interrupted = false;
+    const onWheel = () => { interrupted = true; };
+    const onKey = e => {
+      const keys = ['PageUp','PageDown','Home','End','ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '];
+      if (keys.includes(e.key)) interrupted = true;
+    };
+    window.addEventListener('wheel', onWheel, { passive: true });
+    window.addEventListener('keydown', onKey, { passive: true });
+
+    function step(now) {
+      if (interrupted) return cleanup();
+      const t = Math.min(1, (now - startTime) / duration);
+      const y = startY + distance * ease(t);
+      window.scrollTo(0, y);
+      if (t < 1) requestAnimationFrame(step); else cleanup();
+    }
+    function cleanup() {
+      window.removeEventListener('wheel', onWheel);
+      window.removeEventListener('keydown', onKey);
+    }
+    requestAnimationFrame(step);
+  }
+
   const hero = document.querySelector(".portfolio-head");
   const mini = document.getElementById("mini-nav");
 
@@ -377,7 +409,7 @@
       setActive(targetId);
 
       const top = el.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
-      window.scrollTo({ top, behavior: 'smooth'});
+      smoothScrollTo(top,600)
 
       history.replaceState(null, '', `#${targetId}`);
     });
