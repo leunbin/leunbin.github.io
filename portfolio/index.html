@@ -426,20 +426,24 @@
       lockId = null;
     }
 
-    const lineY =HEADER_HEIGHT + (window.innerHeight - HEADER_HEIGHT) / 2;
+    const ACT_LINE =HEADER_HEIGHT + Math.round((window.innerHeight - HEADER_HEIGHT) * 0.25);
 
-    const candidates = sections
-      .map(sec => {
-        const r = sec.getBoundingClientRect();
-        const center = r.top + r.height /2;
-        const distance = Math.abs(center-lineY);
-        const visible = r.bottom > HEADER_HEIGHT && r.top < window.innerHeight;
-        return { id: sec.id, distance, visible };
-      })
-      .filter( c => c.visible)
-      .sort ((a,b) => a.distance - b.distance);
 
-    if(candidates[0]) setActive(candidates[0].id);
+    const visible = sections
+      .map(sec => ({ id: sec.id, r: sec.getBoundingClientRect(), el: sec}))
+      .filter(({ r }) => r.bottom > HEADER_HEIGHT && r.top < window.innerHeight);
+
+    if(visible.length === 0 ) return;
+
+    let owner = visible.find(({ r }) => r.top <= ACT_LINE && r.bottom > ACT_LINE);
+
+    if(!owner) {
+      owner = visible
+        .map(obj => ({ ...obj, d: Math.abs(obj.r.top - ACT_LINE)}))
+        .sort((a,b) => a.d - b.d)[0];
+    }
+
+    if (owner) setActive(owner.id);
   },{
     root: null,
     rootMargin: `-${HEADER_HEIGHT}px 0px 0px 0px`,
