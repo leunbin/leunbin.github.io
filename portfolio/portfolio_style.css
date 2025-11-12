@@ -20,6 +20,55 @@
   box-sizing: border-box;
 }
 
+.mini {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 3rem;
+  z-index: 10;
+  padding: 0.5rem;
+
+  background-color: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 220ms ease, opacity 220ms ease, backdrop-filter 220ms ease;
+  will-change: transform;
+}
+
+.mini.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mini a{
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+
+.mini a:focus-visible{
+  outline: 2px solid #333;
+  outline-offset: 3px;
+}
+
+.nav-item.active {
+  color: #666666;
+  pointer-events: none;
+  cursor: default;
+}
+
 .portfolio-title {
   display: flex;
   gap: 1rem;
@@ -131,7 +180,8 @@
 
 .twostep,
 .yamspoon,
-.mapu {
+.mapu,
+.ros {
   display: flex;
   width: 100%;
   padding: 1rem;
@@ -140,7 +190,8 @@
 
 .twostep-head,
 .yamspoon-head,
-.mapu-head {
+.mapu-head,
+.ros-head {
   display: flex;
   padding: 1rem;
   gap: 1rem;
@@ -150,7 +201,8 @@
 
 .twostep-title h1,
 .yamspoon-title h1,
-.mapu-title h1 {
+.mapu-title h1,
+.ros-title h1 {
   font-weight: 800;
   font-size: clamp(2.5rem, 8vw, 2.5rem);
 }
@@ -160,8 +212,8 @@
   padding: 0.25rem 0.75rem;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #333333;
-  background-color: #FFF1D6; 
+  color: #ffffff;
+  background-color: #f76c5e; 
   border-radius: 9999px; 
   text-transform: uppercase; 
   letter-spacing: 0.05em;
@@ -173,13 +225,23 @@
   font-size: 0.8rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #1E90FF; 
+  background-color: #61dafb; 
   border-radius: 9999px; 
   text-transform: uppercase; 
   letter-spacing: 0.05em;
 }
 
-
+.algorithm-tag {
+  display: inline-block; 
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #22314e; 
+  border-radius: 9999px; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em;
+}
 
 .github-button {
   width: 2.5rem;
@@ -257,9 +319,18 @@
   box-sizing: border-box;
 }
 
+.ros-body {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 .twostep-left,
 .yamspoon-left,
-.mapu-left {
+.mapu-left,
+.ros-left {
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
@@ -269,7 +340,8 @@
 
 .twostep-img,
 .yamspoon-img,
-.mapu-img {
+.mapu-img,
+.ros-img {
   width: 100%;
   height: 25rem;
   background-color: rebeccapurple;
@@ -277,27 +349,31 @@
 
 .twostep-img img,
 .yamspoon-img img,
-.mapu-img img {
+.mapu-img img,
+.ros-img img {
   width: 100%;
   height: 100%;
 }
 
 .twostep-description,
 .yamspoon-description,
-.mapu-description {
+.mapu-description,
+.ros-description {
   width: 100%;
 }
 
 .twostep-right,
 .yamspoon-right,
-.mapu-right {
+.mapu-right,
+.ros-right {
   display: flex;
   flex-direction: column;
 }
 
 .twostep-subtitle,
 .yamspoon-subtitle,
-.mapu-subtitle {
+.mapu-subtitle,
+.ros-subtitle {
   display: inline-block;
   width: fit-content;
   padding: 0.5rem;
@@ -309,7 +385,8 @@
 
 .twostep-right-role p,
 .yamspoon-right-role p,
-.mapu-right-role p {
+.mapu-right-role p,
+.ros-right-role p {
   margin: 0.3rem 0;
   font-size: 1rem;
   line-height: 1.6;
@@ -320,7 +397,8 @@
 
 .twostep-right-role p::before,
 .yamspoon-right-role p::before,
-.mapu-right-role p::before {
+.mapu-right-role p::before,
+.ros-right-role p::before {
   content: "•";
   position: absolute;
   left: -0.2rem;
@@ -329,7 +407,8 @@
 
 .twostep-right-retro,
 .yamspoon-right-retro,
-.mapu-right-retro {
+.mapu-right-retro,
+.ros-right-retro {
   box-sizing: border-box;
   line-height: 2;
   padding-bottom: 0.8rem;
@@ -337,14 +416,16 @@
 
 .twostep-tags,
 .yamspoon-tags,
-.mapu-tags {
+.mapu-tags,
+.ros-tags {
   display: flex;
   gap: 0.5rem;
 }
 
 .twostep-tags img,
 .yamspoon-tag img,
-.mapu-tag img {
+.mapu-tag img,
+.ros-tag img {
   width: auto; 
   height: 2rem;
   transition: transform 0.2s ease;
@@ -352,7 +433,8 @@
 
 .twostep-tags img:hover,
 .yamspoon-tag img:hover,
-.mapu-tag img:hover {
+.mapu-tag img:hover,
+.ros-tag img:hober {
   transform: scale(1.05);
 }
 

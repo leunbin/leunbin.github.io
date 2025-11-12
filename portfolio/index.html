@@ -32,9 +32,16 @@
     </div>
   </div>
 
+  <nav id="mini-nav" class="mini">
+    <a href="#proj-2step" class="nav-item" data-target="proj-2step">2STEP</a>
+    <a href="#proj-yamspoon" class="nav-item" data-target="proj-yamspoon">YAMSPOON</a>
+    <a href="#proj-mapu" class="nav-item" data-target="proj-mapu">MAPU</a>
+    <a href="#proj-ros" class="nav-item" data-target="proj-ros">경로탐색(ROS2)</a>
+  </nav>
+
   <div class="portfolio-body">
     <!-- 2STEP -->
-    <div class="twostep">
+    <div class="twostep" id="proj-2step">
       <div class="twostep-head">
         <div class="twostep-title">
           <h1>2STEP</h1>
@@ -81,18 +88,20 @@
           </div>
           <div class="twostep-subtitle">💭 Retrospective</div>
           <div class="twostep-right-retro">
-            첫 팀 프로젝트로 백엔드 전 과정을 직접 경험했습니다.
-            <b>CRUD 구현</b>을 처음 시도하면서 데이터 흐름을 이해하게 되었고
-            <b>데이터베이스 설계 → API 개발 → Swagger 문서화</b>까지의 전체 프로세스를 처음부터 끝까지 구축해보며
-            백엔드 개발의 구조와 협업 흐름을 몸소 익혔습니다.
-            이 경험을 통해 단순한 기능 구현을 넘어, 데이터 설계 중심 사고를 갖추는 계기가 되었습니다.
+            <p>
+              첫 팀 프로젝트로 백엔드 전 과정을 직접 경험했습니다.
+              <b>CRUD 구현</b>을 처음 시도하면서 데이터 흐름을 이해하게 되었고
+              <b>데이터베이스 설계 → API 개발 → Swagger 문서화</b>까지의 전체 프로세스를 처음부터 끝까지 구축해보며
+              백엔드 개발의 구조와 협업 흐름을 몸소 익혔습니다.
+              이 경험을 통해 단순한 기능 구현을 넘어, 데이터 설계 중심 사고를 갖추는 계기가 되었습니다.
+            </p>
           </div>
         </div>
       </div>
     </div>
 
     <!-- YAMSPOON -->
-    <div class="yamspoon">
+    <div class="yamspoon" id="proj-yamspoon">
       <div class="yamspoon-head">
         <div class="yamspoon-title">
           <h1>YAMSPOON</h1>
@@ -164,7 +173,7 @@
     </div>
 
     <!-- MAPU -->
-    <div class="mapu">
+    <div class="mapu" id="proj-mapu">
       <div class="mapu-head">
         <div class="mapu-title">
           <h1>MAPU</h1>
@@ -224,6 +233,70 @@
         </div>
       </div>
     </div>
+
+    <!-- ROS -->
+    <div class="ros" id="proj-ros">
+      <div class="ros-head">
+        <div class="ros-title">
+          <h1>자율주행 로봇 경로 탐색 알고리즘 성능 비교</h1>
+        </div>
+        <button class="github-button" type="button" onclick="window.open('https://github.com/Obstabot/Ros2', '_blank')">
+          <span class="github-svg">
+            <img src="../img/github-mark-white.svg" alt="GitHub">
+          </span>
+          <span class="text">https://github.com/Obstabot/Ros2</span>
+        </button>
+        <div class="algorithm-tag">ALGORITHM</div>
+      </div>
+      <div class="ros-body">
+        <div class="ros-left">
+          <div class="ros-img">
+            <img src="../img/ros2demo.gif" alt="ros2 demo">
+          </div>
+          <div class="ros-description">
+            <b>졸업 프로젝트로 ROS2와 Gazebo를 활용한 자율주행 로봇 경로 탐색 프로젝트입니다.</b><br>
+            Jackal 로봇 환경을 직접 구축하고 A*, Dijkstra, RRT* 알고리즘 노드를 개발하여 launch 구조를 통해 자동화된 시뮬레이션 실험을 수행했습니다.
+          </div>
+        </div>
+        <div class="ros-right">
+          <div class="ros-tags">
+            <div class="ros-tag">
+              <img src="https://img.shields.io/badge/ROS2-22314E?logo=ros&logoColor=white" alt="ROS2" />
+            </div>
+            <div class="ros-tag">
+              <img src="https://img.shields.io/badge/Gazebo-EA4C46?logo=gazebo&logoColor=white" alt="Gazebo" />
+            </div>
+            <div class="ros-tag">
+              <img src="https://img.shields.io/badge/Jackal-FFB000?logo=robotframework&logoColor=white" alt="Jackal" />
+            </div>
+            <div class="ros-tag">
+              <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python" />
+            </div>
+          </div>
+          <div class="ros-subtitle">🧩 My Role & Key Work</div>
+          <div class="ros-right-role">
+            <p><b>환경 구축</b> : Jackal 로봇을 활용한 ROS2 기반 시뮬레이션 환경 구축</p>
+            <p><b>렌덤 정적 장애물 구현</b> : 입력 받은 장애물 개수를 바탕으로 기반으로 맵 내 랜덤 위치에 장애물 자동 생성</p>
+            <p><b>알고리즘 적용</b> : 오픈소스 PathPlanning 레포지토리의 A*, Dijkstra, RRT* 알고리즘을 분석·연동하여 성능 비교 실험 수행</p>
+            <p><b>시각화 및 검증</b> : Rviz2를 활용해 경로 탐색 결과 및 이동 경로를 시각적으로 검증</p>
+            <p><b>성능 분석</b> : 탐색 시간, 경로 길이, 성공률 등 정량 지표 기반 알고리즘별 비교</p>
+          </div>
+          <div class="ros-subtitle">💭 Retrospective</div>
+          <div class="ros-right-retro">
+            <p>
+              팀 프로젝트 였지만 개발 경험이 부족한 팀원을 대신해 프로젝트 전체 구조 설계부터 구현, 분석까지 전 과정을 주도적으로 수행했습니다.
+              로봇 제어, 경로 탐색 알고리즘 적용, 시뮬레이션 환경 구축 뿐만 아니라 개발 관련 발표와 문서 작성까지 담당하여 팀의 기술적 완성도를 높였습니다.
+            </p>
+            <p>
+              센서 없이 사전 경로만을 추종할 때는 A*가 가장 높은 안정성을 보였으며 RRT*는 센서 피드백 기반 환경에서의 확장 가능성을 확인했습니다.
+            </p>
+            <p>
+              이를 통해 한정된 인원 속에서도 문제를 끝까지 해결하는 실행력과 리더십을 키웠으며 프로젝트 완성도로 A+ 평가를 받았습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div> 
   <footer class="portfolio-footer">
     <div class="footer-content">
@@ -261,5 +334,97 @@
       setTimeout(() => msg.classList.remove("show"), 1500);
     });
   });
+
+  const hero = document.querySelector(".portfolio-head");
+  const mini = document.getElementById("mini-nav");
+
+  const thresholds = Array.from({length: 21}, (_, i) => i/20);
+
+  const io = new IntersectionObserver(([entry]) => {
+    const ratio = entry.intersectionRatio;
+    if(ratio <= 0.2) {
+      mini.classList.add('show');
+    } else {
+      mini.classList.remove('show');
+    }
+  }, {threshold: thresholds});
+
+  io.observe(hero);
+
+  const navItems = [...document.querySelectorAll('#mini-nav .nav-item')];
+
+  const target = (a) => a.dataset.target;
+  const idList = navItems.map(target).filter(Boolean);
+  
+  const sections = idList.map(id => document.getElementById(id)).filter(Boolean);
+
+  const HEADER_HEIGHT = 0;
+
+  function setActive(id) {
+    navItems.forEach(a => a.classList.toggle('active', target(a) === id));
+  }
+
+  let lockId = null;
+
+  navItems.forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = target(a);
+      const el = document.getElementById(targetId);
+      if(!el) return;
+
+      lockId = targetId;
+      setActive(targetId);
+
+      const top = el.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
+      window.scrollTo({ top, behavior: 'smooth'});
+
+      history.replaceState(null, '', `#${targetId}`);
+    });
+  });
+
+  const ioActive = new IntersectionObserver((entries) => {
+    if (lockId) {
+      const locked = document.getElementById(lockId);
+      if(locked) {
+        const rect = locked.getBoundingClientRect();
+        const fullyOut = rect.bottom <= HEADER_HEIGHT || rect.top >= window.innerHeight;
+        if(!fullyOut) return;
+      }
+      lockId = null;
+    }
+
+    const lineY =HEADER_HEIGHT + (window.innerHeight - HEADER_HEIGHT) / 2;
+
+    const candidates = sections
+      .map(sec => {
+        const r = sec.getBoundingClientRect();
+        const center = r.top + r.height /2;
+        const distance = Math.abs(center-lineY);
+        const visible = r.bottom > HEADER_HEIGHT && r.top < window.innerHeight;
+        return { id: sec.id, distance, visible };
+      })
+      .filter( c => c.visible)
+      .sort ((a,b) => a.distance - b.distance);
+
+    if(candidates[0]) setActive(candidates[0].id);
+  },{
+    root: null,
+    rootMargin: `-${HEADER_HEIGHT}px 0px 0px 0px`,
+    threshold: [0, 0.25, 0.5, 0.75, 1]
+  });
+
+  sections.forEach(sec => ioActive.observe(sec));
+
+  window.addEventListener('load', () => {
+    const hashId = location.hash.replace('#', '');
+    if (hashId && document.getElementById(hashId)) {
+      lockId = hashId;
+      setActive(hashId);
+    } else if (sections[0]) {
+      setActive(sections[0].id);
+    }
+});
+
 </script>
 </html>
