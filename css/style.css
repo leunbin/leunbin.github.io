@@ -1,0 +1,361 @@
+/* =========================================================
+   이은빈 포트폴리오 — style.css
+   1. 토큰 / 2. 기본 / 3. 레이아웃 / 4. 헤더 / 5. 히어로
+   6. 티커 / 7. 소개 / 8. 지표 / 9. 프로젝트 요약
+   10. 블랙 디바이더 / 11. 프로젝트 상세 / 12. 푸터
+   13. 애니메이션 유틸 / 14. 반응형·접근성
+   ========================================================= */
+
+/* ── 1. 토큰 ─────────────────────────────────────────── */
+:root{
+  --paper:#e8ecef;
+  --paper-2:#f2f5f7;
+  --ink:#000000;
+  --slab:#000000;
+  --pill:#3d3d3d;
+  --rule:#9aa0a6;
+  --rule-soft:#c6ccd1;
+  --blue:#16418e;
+  --green:#1f6b4a;
+  --violet:#6b4bb0;
+  --muted:#5a6167;
+  --white:#ffffff;
+
+  --shell:1240px;
+  --gut:clamp(20px,5vw,72px);
+  --bar-h:60px;
+
+  --fs-display:clamp(3.6rem,13vw,10.5rem);
+  --fs-h2:clamp(2.2rem,6.4vw,4.6rem);
+  --fs-h3:clamp(1.5rem,3.4vw,2.4rem);
+  --fs-lead:clamp(1.05rem,2.1vw,1.5rem);
+  --fs-body:clamp(0.95rem,1.25vw,1.05rem);
+  --fs-meta:0.78rem;
+
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+/* ── 2. 기본 ─────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:var(--bar-h)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-size:var(--fs-body);line-height:1.62;font-weight:400;
+  word-break:keep-all;overflow-wrap:anywhere;
+  -webkit-font-smoothing:antialiased;
+}
+body[data-lock="true"]{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+ul,ol{margin:0;padding:0;list-style:none}
+h1,h2,h3,h4,p{margin:0}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* ── 3. 레이아웃 ─────────────────────────────────────── */
+.shell{max-width:var(--shell);margin-inline:auto;padding-inline:var(--gut)}
+.sec{padding:clamp(76px,11vw,150px) 0}
+.sec__head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:clamp(30px,5vw,58px)}
+.sec__title{font-size:var(--fs-h2);font-weight:900;letter-spacing:-.045em;line-height:.95;text-transform:uppercase}
+.sec__sub{font-size:1rem;font-weight:600;color:var(--muted)}
+.skip{position:absolute;left:-9999px;top:0;background:#000;color:#fff;padding:12px 18px;z-index:120}
+.skip:focus{left:12px;top:12px}
+
+/* ── 로딩 커튼 ───────────────────────────────────────── */
+.curtain{
+  position:fixed;inset:0;z-index:100;background:var(--slab);
+  display:grid;place-items:center;
+  transition:transform .75s var(--ease);
+}
+.curtain__mark{
+  color:var(--white);font-size:clamp(2.4rem,9vw,5rem);font-weight:900;letter-spacing:-.06em;
+  opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s var(--ease);
+}
+.curtain[data-show="true"] .curtain__mark{opacity:1;transform:none}
+.curtain[data-done="true"]{transform:translateY(-100%)}
+
+/* ── 4. 헤더 ─────────────────────────────────────────── */
+.bar{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  background:rgba(232,236,239,.88);backdrop-filter:blur(12px);
+  transform:translateY(-100%);transition:transform .45s var(--ease);
+}
+.bar[data-on="true"]{transform:none}
+.bar[data-hidden="true"]{transform:translateY(-100%)}
+.bar__in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:var(--bar-h)}
+.bar__name{font-weight:800;letter-spacing:-.02em;font-size:.98rem;text-decoration:none}
+.bar__name span{color:var(--muted);font-weight:500;margin-left:8px}
+.bar__nav{display:flex;gap:clamp(12px,2vw,26px);overflow-x:auto;scrollbar-width:none}
+.bar__nav::-webkit-scrollbar{display:none}
+.bar__nav a{
+  position:relative;text-decoration:none;font-size:.83rem;font-weight:600;color:var(--muted);
+  white-space:nowrap;padding:4px 0;transition:color .22s ease;
+}
+.bar__nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--ink);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);
+}
+.bar__nav a:hover{color:var(--ink)}
+.bar__nav a:hover::after,.bar__nav a[aria-current="true"]::after{transform:scaleX(1)}
+.bar__nav a[aria-current="true"]{color:var(--ink)}
+.bar__progress{
+  height:2px;background:var(--ink);width:0;
+  position:absolute;left:0;bottom:0;transform-origin:left;
+}
+
+/* ── 5. 히어로 ───────────────────────────────────────── */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 56px;overflow:hidden}
+.hero__slab{
+  position:absolute;top:0;right:0;width:26vw;max-width:340px;height:100%;
+  background:var(--slab);z-index:0;transform:scaleY(0);transform-origin:top;
+}
+.hero__in{position:relative;z-index:1;width:100%}
+.hero__wordmark{
+  font-size:var(--fs-display);font-weight:900;letter-spacing:-.055em;line-height:.82;
+  text-transform:uppercase;margin-bottom:.24em;
+}
+.hero__wordmark .mask{display:block}
+.hero__lead{font-size:var(--fs-lead);font-weight:500;max-width:30ch;line-height:1.45;letter-spacing:-.02em;opacity:0}
+.hero__lead b{font-weight:800}
+.hero__foot{display:flex;flex-wrap:wrap;gap:14px 40px;align-items:flex-end;margin-top:clamp(48px,9vw,110px);opacity:0}
+.hero__contact{display:grid;gap:2px}
+.hero__contact dt{font-size:var(--fs-meta);font-weight:800;letter-spacing:.14em;color:var(--muted)}
+.hero__contact dd{margin:0;font-weight:600;font-size:1rem}
+.hero__contact a{text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px;transition:border-color .2s ease}
+.hero__contact a:hover{border-bottom-color:var(--ink)}
+.hero__scroll{margin-left:auto;font-size:.8rem;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:12px}
+.hero__scroll i{display:block;width:60px;height:1px;background:var(--rule-soft);position:relative;overflow:hidden}
+.hero__scroll i::after{
+  content:"";position:absolute;inset:0;background:var(--ink);
+  transform:translateX(-100%);animation:sweep 2.4s var(--ease) infinite;
+}
+@keyframes sweep{0%{transform:translateX(-100%)}55%,100%{transform:translateX(100%)}}
+
+/* ── 6. 티커 ─────────────────────────────────────────── */
+.ticker{
+  background:var(--slab);color:var(--white);overflow:hidden;
+  padding:16px 0;white-space:nowrap;
+}
+.ticker__track{display:inline-flex;will-change:transform}
+.ticker__set{
+  display:inline-flex;align-items:center;gap:26px;padding-right:26px;
+  font-size:.92rem;font-weight:700;letter-spacing:.01em;
+}
+.ticker__set i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#6a7076}
+
+/* ── 7. 소개 ─────────────────────────────────────────── */
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:start}
+.about__claim{font-size:var(--fs-h3);font-weight:800;letter-spacing:-.035em;line-height:1.3;margin-bottom:28px}
+.about__body p{max-width:46ch;color:#22262a}
+.about__body p + p{margin-top:16px}
+.traits{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);
+  margin-top:clamp(48px,7vw,88px);padding-top:clamp(28px,4vw,44px);border-top:2px solid var(--ink);
+}
+.trait{display:flex;flex-direction:column;gap:18px}
+.trait__mark{
+  width:104px;height:104px;border-radius:50%;background:var(--pill);color:var(--white);
+  display:grid;place-items:center;font-weight:700;font-size:1.08rem;letter-spacing:.02em;
+  transition:background .25s ease,transform .35s var(--ease);
+}
+.trait:hover .trait__mark{background:var(--ink);transform:translateY(-5px)}
+.trait__body{font-size:.92rem;line-height:1.6;color:var(--muted);max-width:34ch}
+.trait__body b{display:block;font-weight:800;font-size:1.02rem;color:var(--ink);margin-bottom:8px;letter-spacing:-.02em}
+.facts{border-top:2px solid var(--ink)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule-soft)}
+.facts dt{font-size:.82rem;font-weight:700;color:var(--muted)}
+.facts dd{margin:0;font-weight:700;text-align:right;letter-spacing:-.01em}
+
+/* ── 9. 프로젝트 요약 ────────────────────────────────── */
+.drawline{display:block;height:1px;background:var(--ink);width:0;margin-bottom:-1px}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-soft);border-block:1px solid var(--rule-soft)}
+.tl__item{
+  background:var(--paper);padding:26px clamp(16px,2vw,26px) 28px;
+  display:flex;flex-direction:column;gap:12px;text-decoration:none;position:relative;overflow:hidden;
+}
+.tl__item::before{
+  content:"";position:absolute;inset:0;background:var(--paper-2);
+  transform:translateY(100%);transition:transform .4s var(--ease);z-index:0;
+}
+.tl__item:hover::before{transform:none}
+.tl__item > *{position:relative;z-index:1}
+.tl__top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tl__date{font-size:.8rem;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.tag{font-size:.68rem;font-weight:800;letter-spacing:.12em;padding:4px 9px;border:1px solid currentColor;border-radius:999px;white-space:nowrap}
+.tag--be{color:var(--blue)}
+.tag--ro{color:var(--violet)}
+.tag--fe{color:var(--green)}
+.tl__name{font-size:1.5rem;font-weight:900;letter-spacing:-.035em;line-height:1.1;display:block}
+.tl__desc{color:var(--muted);font-size:.92rem;line-height:1.5;display:block}
+.tl__role{
+  margin-top:auto;padding-top:14px;font-size:.84rem;font-weight:600;
+  border-top:1px dashed var(--rule-soft);display:flex;justify-content:space-between;gap:8px;
+}
+.tl__role em{font-style:normal;color:var(--muted);font-weight:500}
+
+/* ── 10. 블랙 디바이더 ───────────────────────────────── */
+.split{background:var(--slab);color:var(--white)}
+.split__in{display:grid;grid-template-columns:minmax(240px,38%) 1fr;min-height:clamp(280px,42vw,460px)}
+.split__left{display:flex;align-items:center;padding:clamp(36px,6vw,70px) 0 clamp(36px,6vw,70px) var(--gut)}
+.split__num{font-size:clamp(2.8rem,8vw,6rem);font-weight:900;letter-spacing:-.05em;line-height:.95;text-transform:uppercase}
+.split__num .mask{display:block}
+.split__right{background:var(--paper);color:var(--ink);display:flex;align-items:center;padding:clamp(36px,6vw,70px) var(--gut)}
+.split__list{display:grid;gap:26px;width:100%}
+.split__row{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;text-decoration:none}
+.split__row b{font-size:clamp(1.2rem,2.4vw,1.8rem);font-weight:900;letter-spacing:-.03em;color:var(--muted);transition:color .25s ease}
+.split__row span{font-size:clamp(1.05rem,2vw,1.45rem);font-weight:800;letter-spacing:-.03em;display:block}
+.split__row em{display:block;font-style:normal;font-weight:500;font-size:.95rem;color:var(--muted);margin-top:2px}
+.split__row:hover span{color:var(--blue)}
+.split__row:hover b{color:var(--blue)}
+
+/* ── 11. 프로젝트 상세 ───────────────────────────────── */
+.proj{padding:clamp(64px,9vw,120px) 0;border-bottom:1px solid var(--rule-soft)}
+.proj:last-of-type{border-bottom:0}
+.proj__head{display:flex;align-items:flex-start;gap:clamp(16px,3vw,40px);flex-wrap:wrap;margin-bottom:clamp(26px,4vw,44px)}
+.proj__idx{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:900;letter-spacing:-.05em;line-height:.85;color:var(--rule)}
+.proj__id{flex:1 1 320px}
+.proj__titlerow{display:flex;align-items:flex-end;gap:12px clamp(14px,2.4vw,28px);flex-wrap:wrap}
+.proj__name{font-size:var(--fs-h2);font-weight:900;letter-spacing:-.05em;line-height:.95}
+.proj__tagline{font-size:var(--fs-lead);font-weight:500;color:var(--muted);margin-top:14px;max-width:44ch}
+.proj__links{display:flex;gap:10px;flex-wrap:wrap;padding-bottom:.28em}
+.ghlink{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font-size:.85rem;font-weight:700;padding:8px 14px;border:1.5px solid var(--ink);border-radius:999px;
+  transition:background .22s ease,color .22s ease,transform .22s var(--ease);
+}
+.ghlink:hover{background:var(--ink);color:var(--white);transform:translateY(-2px)}
+.ghlink svg{width:15px;height:15px;fill:currentColor;flex:none}
+
+.proj__grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,5vw,68px);align-items:start}
+.side{display:grid;gap:26px;position:sticky;top:calc(var(--bar-h) + 24px)}
+.block h4,.main h4{font-size:.74rem;font-weight:800;letter-spacing:.16em;color:var(--muted);margin-bottom:10px}
+.main h4{margin-bottom:14px}
+.stack{display:grid;gap:7px}
+.stack li{display:grid;grid-template-columns:72px 1fr;gap:10px;font-size:.88rem;line-height:1.45}
+.stack b{font-weight:800;color:var(--blue);font-size:.8rem;padding-top:1px}
+.gauge{display:flex;gap:6px;align-items:center;margin-bottom:8px}
+.gauge i{
+  width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;
+  transition:background .3s var(--ease);transition-delay:calc(var(--i) * 90ms);
+}
+.gauge b{font-weight:800;margin-left:6px;font-size:.9rem}
+.role{font-size:.88rem;color:#22262a;line-height:1.55}
+
+.main{display:grid;gap:34px;min-width:0}
+.steps > li,.wins > li{
+  position:relative;padding:9px 0 9px 20px;line-height:1.55;
+  border-top:1px solid var(--rule-soft);
+}
+.steps > li:last-child,.wins > li:last-child{border-bottom:1px solid var(--rule-soft)}
+.steps > li::before,.wins > li::before{
+  content:"";position:absolute;left:0;top:calc(9px + .62em);width:7px;height:7px;background:var(--ink);
+}
+.wins > li::before{background:var(--blue);border-radius:50%}
+.sub{margin:8px 0 0;display:block}
+.sub > li{position:relative;padding:0 0 0 22px;border:0;font-size:.92rem;color:#22262a;line-height:1.55}
+.sub > li + li{margin-top:6px}
+.sub > li::before{content:"";position:absolute;left:0;top:.78em;width:12px;height:1px;background:var(--rule);border-radius:0}
+.fig{font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}
+.fig--down{color:var(--green)}
+
+/* ── 12. 푸터 ────────────────────────────────────────── */
+.end{background:var(--slab);color:var(--white);padding:clamp(80px,12vw,160px) 0 clamp(40px,6vw,70px)}
+.end__title{font-size:var(--fs-display);font-weight:900;letter-spacing:-.055em;line-height:.85;text-transform:uppercase}
+.end__title .mask{display:block}
+.end__grid{display:flex;flex-wrap:wrap;gap:28px 64px;margin-top:clamp(36px,6vw,72px)}
+.end__grid dt{font-size:var(--fs-meta);font-weight:800;letter-spacing:.14em;color:#9aa0a6;margin-bottom:6px}
+.end__grid dd{margin:0;font-size:clamp(1rem,2vw,1.3rem);font-weight:700;letter-spacing:-.02em}
+.end__grid a{text-decoration:none;border-bottom:1px solid #5a6167;padding-bottom:2px;transition:border-color .2s ease}
+.end__grid a:hover{border-bottom-color:#fff}
+.copy{border:0;background:transparent;color:inherit;font-weight:700;cursor:pointer;border-bottom:1px solid #5a6167;padding:0 0 2px;transition:color .2s ease,border-color .2s ease}
+.copy:hover{border-bottom-color:#fff}
+.copy[data-done="true"]{color:#8fd0a8;border-bottom-color:#8fd0a8}
+.end__foot{margin-top:clamp(56px,9vw,110px);padding-top:20px;border-top:1px solid #2a2a2a;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:#9aa0a6}
+
+.totop{
+  position:fixed;right:clamp(16px,3vw,32px);bottom:clamp(16px,3vw,32px);z-index:55;
+  width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--ink);color:var(--white);font-size:1.1rem;
+  opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:opacity .3s ease,transform .3s var(--ease),background .2s ease;
+}
+.totop[data-on="true"]{opacity:1;pointer-events:auto;transform:none}
+.totop:hover{background:var(--blue)}
+
+/* ── 13. 애니메이션 유틸 ─────────────────────────────── */
+.mask{display:inline-block;overflow:hidden;vertical-align:bottom}
+.mask__in{display:block;transform:translateY(110%);transition:transform .9s var(--ease);transition-delay:calc(var(--i,0) * 90ms)}
+[data-rise].is-in .mask__in,.mask.is-in .mask__in{transform:none}
+
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s var(--ease);transition-delay:calc(var(--i,0) * 90ms)}
+[data-reveal].is-in{opacity:1;transform:none}
+
+[data-group] > *{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
+[data-group].is-in > *{opacity:1;transform:none}
+
+[data-draw]{transition:width 1s var(--ease)}
+[data-draw].is-in{width:100%}
+
+.gauge.is-in i[data-on]{background:var(--ink)}
+
+/* 히어로 시퀀스 */
+.hero.is-ready .hero__slab{transform:scaleY(1);transition:transform .8s var(--ease)}
+.hero.is-ready .mask__in{transform:none}
+.hero.is-ready .hero__wordmark .mask:nth-child(1) .mask__in{transition-delay:.14s}
+.hero.is-ready .hero__wordmark .mask:nth-child(2) .mask__in{transition-delay:.22s}
+.hero.is-ready .hero__lead{opacity:1;transition:opacity .8s ease .5s}
+.hero.is-ready .hero__foot{opacity:1;transition:opacity .8s ease .66s}
+
+/* ── 14. 반응형 ──────────────────────────────────────── */
+@media (max-width:1024px){
+  .traits{grid-template-columns:repeat(3,1fr);gap:24px}
+  .trait__mark{width:88px;height:88px;font-size:.98rem}
+}
+@media (max-width:900px){
+  .about{grid-template-columns:1fr}
+  .tl{grid-template-columns:repeat(2,1fr)}
+  .proj__grid{grid-template-columns:1fr}
+  .side{position:static}
+}
+@media (max-width:860px){
+  .hero__slab{width:18vw}
+  .hero__scroll{display:none}
+}
+@media (max-width:760px){
+  .split__in{grid-template-columns:1fr}
+  .split__left{padding-inline:var(--gut)}
+}
+@media (max-width:700px){
+  .bar__name span{display:none}
+  .traits{grid-template-columns:1fr;gap:28px}
+  .trait{flex-direction:row;align-items:flex-start;gap:18px}
+  .trait__mark{width:76px;height:76px;font-size:.95rem;flex:none}
+  .trait__body{max-width:none}
+}
+@media (max-width:600px){
+  .tl{grid-template-columns:1fr}
+}
+
+/* 접근성: 모션 최소화 */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition-duration:.01ms !important;transition-delay:0ms !important}
+  .curtain{display:none}
+  .bar{transform:none}
+  .hero__slab{transform:scaleY(1)}
+  .mask__in{transform:none}
+  [data-reveal],[data-group] > *{opacity:1;transform:none}
+  [data-draw]{width:100%}
+  .gauge i[data-on]{background:var(--ink)}
+  .ticker__track{transform:none}
+}
+
+/* 인쇄 */
+@media print{
+  .bar,.hero__slab,.ticker,.totop,.curtain{display:none}
+  body{background:#fff}
+  [data-reveal],[data-group] > *{opacity:1;transform:none}
+  .mask__in{transform:none}
+}

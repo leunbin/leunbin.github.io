@@ -1,158 +1,620 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>은빈이의 블로그</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./layout/layout_style.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./home_style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="./js/include.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이은빈 · 백엔드 개발자 포트폴리오</title>
+<meta name="description" content="기능 구현과 리팩토링을 좋아하는 백엔드 개발자 이은빈의 포트폴리오입니다.">
+<meta property="og:title" content="이은빈 · 백엔드 개발자 포트폴리오">
+<meta property="og:description" content="기능 구현과 리팩토링을 좋아하는 백엔드 개발자 이은빈의 포트폴리오입니다.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/><text x='50' y='73' font-size='66' font-family='sans-serif' font-weight='900' fill='%23fff' text-anchor='middle'>E</text></svg>">
 </head>
-<body class="blog-body">
-  <div class="home-header">
-    <div class="blog-header">
-      <div data-include="layout/header.html"></div>
-      <div data-include="layout/navigation.html"></div>
-    </div>
-    <div data-include="layout/searchingbar.html"></div>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<!-- 로딩 커튼 -->
+<div class="curtain" id="curtain" aria-hidden="true"><span class="curtain__mark">EB</span></div>
+
+<header class="bar" id="bar">
+  <div class="shell bar__in">
+    <a class="bar__name" href="#top">이은빈<span>백엔드 개발자</span></a>
+    <nav class="bar__nav" aria-label="섹션 바로가기">
+      <a href="#about">소개</a>
+      <a href="#summary">프로젝트</a>
+      <a href="#backend">Backend</a>
+      <a href="#robotics">Robotics</a>
+      <a href="#frontend">Frontend</a>
+      <a href="#contact">연락처</a>
+    </nav>
   </div>
-  
-  <div class="home-main">
-    <div class="card">
-      <div class="card-header">
-        <div class="circles"> 
-          <div class="c"></div>
-          <div class="c"></div>
-          <div class="c"></div>
-        </div>
-  
-        <div class="browser">
-          <div class="chevrons">
-            <svg viewBox="0 0 20 20" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-name="20" id="_20">
-              <path transform="translate(6.25 3.75)" d="M0,6.25,6.25,0l.875.875L1.75,6.25l5.375,5.375L6.25,12.5Z" id="Fill"></path>
-            </svg>
-            <svg viewBox="0 0 20 20" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-name="20" id="_20">
-              <path transform="translate(6.625 3.75)" d="M7.125,6.25.875,12.5,0,11.625,5.375,6.25,0,.875.875,0Z" id="Fill"></path>
-            </svg>
-          </div>
-  
-          <div class="search-bar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16.89 16.887">
-              <path id="Fill" d="M16.006,16.887h0l-4.743-4.718a6.875,6.875,0,1,1,.906-.906l4.719,4.744-.88.88ZM6.887,1.262a5.625,5.625,0,1,0,5.625,5.625A5.631,5.631,0,0,0,6.887,1.262Z" transform="translate(0.003 0)"></path>
-            </svg>
-              leunbin.github.io
-            <div></div>
-          </div>
-        </div>
-      </div>
+  <div class="bar__progress" id="progress" aria-hidden="true"></div>
+</header>
 
-      <div class="card-main">
-        <div class="profile-img">
-          <img src="./img/profileimg.svg" alt="profile img">
-        </div>
+<main id="main">
 
-        <div class="profile-content">
-          <div class="mini-bio">개발자로 성장 중인 작은 기록들 <br> <i>A slow but steady dev in progress.</i></div>
-          <div class="mbti">
-            <span class="mbti-title">MBTI</span>
-            <span class="mbti-info">INTP</span>
-          </div>
-
-          <div class="interest">
-            <span class="interest-title">INTERESTS</span>
-            <span class="interest-info">요즘은 개발 공부에 푹 빠짐 😶‍🌫️</span>
-            <span class="interest-info">카페에서 멍때리기 하기 ☕</span>
-            <span class="interest-info">영화 보기 🎬</span>
-          </div>
-
-          <div class="goal">
-            <span class="goal-title">GOAL</span>
-            <span class="goal-info">꾸준한 기록과 공부를 통해 비전공자임에도 실력 있는 개발자로 성장하기!</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class="home-submain">
-      <div class="character-card">
-        <div class="character-card-main">
-          <div class="character-card-icon">
-            <img src="./img/greenleaf.svg" alt="" class="character-card-icon">
-          </div>
-
-          <span class="character-card-title">
-            ABILITY
-          </span>
-
-          <p class="character-card-content">
-            <span class="keyword">Spring</span> <span class="keyword">Node.js</span><br>
-            <span class="keyword">React</span><br>
-            <span class="keyword">SQL</span><br>
-            <span class="keyword">ROS</span> <span class="keyword">Gazebo</span><br>
-        </div>
-      </div>
-
-        <div class="character-card">
-          <div class="character-card-main">
-            <div class="character-card-icon">
-              <img src="./img/acorn.svg" alt="" class="character-card-icon">
-            </div>
-
-            <span class="character-card-title">
-              CHARACTER
-            </span>
-
-            <p class="character-card-content">
-              <span class="keyword">끈기</span> <span class="keyword">회복력</span><br>
-              <span class="keyword">성장 중심</span><br>
-              <span class="keyword">완성도 추구</span><br>
-            </p>
-        </div>
-      </div>
-    </div> -->
-
-    <div class="home-footer">
-      <button class="button" onclick="window.open('/portfolio/', '_blank')">
-        <div class="container">
-          <div class="folder-container">
-            <div class="folder folder_one"></div>
-            <div class="folder folder_two"></div>
-            <div class="folder folder_three"></div>
-            <div class="folder folder_four"></div>
-          </div>
-          <span class="btn-text">PORTFOLIO</span>
-        </div>
-        <div class="active_line"></div>
-        <span class="text">Portfolio</span>
-      </button>
+<!-- ────────── HERO ────────── -->
+<section class="hero" id="top">
+  <div class="hero__slab" aria-hidden="true"></div>
+  <div class="shell hero__in">
+    <h1 class="hero__wordmark">
+      <span class="mask"><span class="mask__in">Portfolio</span></span>
+    </h1>
+    <p class="hero__lead">기능 구현과 리팩토링을 좋아하는 <b>백엔드 개발자 이은빈</b>입니다.</p>
+    <div class="hero__foot">
+      <dl class="hero__contact">
+        <dt>CONTACT</dt>
+        <dd><a href="mailto:silverbin2105@gmail.com">silverbin2105@gmail.com</a></dd>
+        <dd><a href="https://github.com/leunbin" target="_blank" rel="noopener">github.com/leunbin</a></dd>
+      </dl>
     </div>
   </div>
+</section>
+
+<!-- ────────── 기술 티커 ────────── -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track" id="ticker">
+    <span class="ticker__set">
+      Java 17 · 21 <i></i> Spring Boot <i></i> Spring Data JPA <i></i> QueryDSL <i></i> PostgreSQL <i></i> MySQL <i></i> MongoDB <i></i> Redis <i></i> Redisson <i></i> RabbitMQ <i></i> Docker <i></i> AWS EC2 <i></i> GitHub Actions <i></i> Nginx <i></i> JUnit5 <i></i> k6 <i></i> ROS2 <i></i> React <i></i> TypeScript <i></i>
+    </span>
+  </div>
+</div>
+
+<!-- ────────── ABOUT ────────── -->
+<section class="sec" id="about">
+  <div class="shell">
+    <div class="sec__head">
+      <h2 class="sec__title"><span class="mask" data-rise><span class="mask__in">Introduction</span></span></h2>
+      <p class="sec__sub" data-reveal>소개</p>
+    </div>
+
+    <div class="about">
+      <div class="about__body">
+        <p class="about__claim" data-reveal>새로운 시도를 두려워하지 않고, <br>개선은 숫자로 확인합니다.</p>
+        <p data-reveal style="--i:1">안녕하세요! 백엔드 개발자 이은빈입니다. 새로운 기능을 구현하는 것 자체를 즐기며, 팀 프로젝트에서도 해보지 않은 기능이라면 항상 구현해 보려고 주도적으로 맡아 개발합니다.</p>
+        <p data-reveal style="--i:2">안정적인 시스템을 구축하는 방법에도 관심이 많아 새로운 도구들을 직접 도입하고, 성능 개선 지표를 직접 확인하며 시스템의 완성도를 높이고자 노력하고 있습니다.</p>
+      </div>
+
+      <dl class="facts" data-group>
+        <div style="--i:0"><dt>주력 분야</dt><dd>Backend</dd></div>
+        <div style="--i:1"><dt>주 언어 · 프레임워크</dt><dd>Java 17 · 21 / Spring Boot</dd></div>
+        <div style="--i:2"><dt>데이터</dt><dd>PostgreSQL, MySQL, MongoDB, Redis</dd></div>
+        <div style="--i:3"><dt>인프라</dt><dd>Docker, AWS EC2, GitHub Actions</dd></div>
+        <div style="--i:4"><dt>테스트 · 성능</dt><dd>JUnit5, Mockito, k6, Jest</dd></div>
+        <div style="--i:5"><dt>그 외 경험</dt><dd>ROS2 · Gazebo, React · TypeScript</dd></div>
+      </dl>
+    </div>
+
+    <ul class="traits" data-group>
+      <li class="trait" style="--i:0">
+        <span class="trait__mark">의심</span>
+        <p class="trait__body"><b>잘 돌아가는 코드도 일단 부하를 걸어봅니다.</b>기능이 동작하는 것까지 확인하고 끝내는 대신 k6로 조회 200RPS, 생성 100RPS를 걸어봤고, 거기서 인덱스 누락과 락 경합을 찾았습니다.</p>
+      </li>
+      <li class="trait" style="--i:1">
+        <span class="trait__mark">완주</span>
+        <p class="trait__body"><b>에러 하나를 원인이 나올 때까지 따라갑니다.</b>Prisma P2028을 재시도로 덮지 않고 MySQL InnoDB LockWait까지 내려가, 동일 상품 옵션에 대한 row-level lock 경합을 확인했습니다.</p>
+      </li>
+      <li class="trait" style="--i:2">
+        <span class="trait__mark">자작</span>
+        <p class="trait__body"><b>필요한 도구가 없으면 만들어 씁니다.</b>부하테스트 결과를 매번 손으로 비교하기 번거로워, Python으로 성능 분석 도구를 직접 만들어 사용했습니다.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ────────── PROJECT SUMMARY ────────── -->
+<section class="sec" id="summary">
+  <div class="shell">
+    <div class="sec__head">
+      <h2 class="sec__title"><span class="mask" data-rise><span class="mask__in">Project Summary</span></span></h2>
+      <p class="sec__sub" data-reveal>프로젝트 요약 · 6개</p>
+    </div>
+    <span class="drawline" data-draw></span>
+    <div class="tl" data-group>
+
+      <a class="tl__item" href="#p01" style="--i:0">
+        <span class="tl__top"><span class="tl__date">2026.08</span><span class="tag tag--be">BACKEND</span></span>
+        <span class="tl__name">백마택배</span>
+        <span class="tl__desc">MSA 기반 국내 물류 관리 플랫폼. Hub 도메인과 허브 간 최적 경로 탐색·캐싱을 담당했습니다.</span>
+        <span class="tl__role">6인 팀 · 팀 리더 <em>기여도 30%</em></span>
+      </a>
+
+      <a class="tl__item" href="#p02" style="--i:1">
+        <span class="tl__top"><span class="tl__date">2026.07</span><span class="tag tag--be">BACKEND</span></span>
+        <span class="tl__name">삼인분</span>
+        <span class="tl__desc">AI를 활용한 음식 주문 관리 플랫폼. 결제 도메인과 배포 인프라를 맡았습니다.</span>
+        <span class="tl__role">6인 팀 <em>기여도 25%</em></span>
+      </a>
+
+      <a class="tl__item" href="#p03" style="--i:2">
+        <span class="tl__top"><span class="tl__date">2026.01</span><span class="tag tag--be">BACKEND</span></span>
+        <span class="tl__name">MetaSNS</span>
+        <span class="tl__desc">소셜 네트워크 서비스. 회원·게시물·좋아요·파일 업로드까지 혼자 설계하고 구현했습니다.</span>
+        <span class="tl__role">개인 프로젝트 <em>기여도 100%</em></span>
+      </a>
+
+      <a class="tl__item" href="#p04" style="--i:3">
+        <span class="tl__top"><span class="tl__date">2025.11 – 2026.02</span><span class="tag tag--be">BACKEND</span></span>
+        <span class="tl__name">2Step</span>
+        <span class="tl__desc">운동화 쇼핑몰. 주문 도메인을 MongoDB에서 MySQL로 재설계하고 부하테스트로 병목을 잡았습니다.</span>
+        <span class="tl__role">팀 프로젝트 <em>주문 도메인 담당</em></span>
+      </a>
+
+      <a class="tl__item" href="#p05" style="--i:4">
+        <span class="tl__top"><span class="tl__date">2025.03 – 06</span><span class="tag tag--ro">ROBOTICS</span></span>
+        <span class="tl__name">Finding Path Analysis</span>
+        <span class="tl__desc">A*, Dijkstra, RRT* 경로 탐색 알고리즘 3종의 성능을 시뮬레이션으로 비교했습니다.</span>
+        <span class="tl__role">팀 프로젝트 <em>기여도 70%</em></span>
+      </a>
+
+      <a class="tl__item" href="#p06" style="--i:5">
+        <span class="tl__top"><span class="tl__date">2024.06 – 08</span><span class="tag tag--fe">FRONTEND</span></span>
+        <span class="tl__name">MAPU</span>
+        <span class="tl__desc">지도 동시 편집·공유 플랫폼. 타임라인/탐색 페이지와 지도 편집 툴바를 구현했습니다.</span>
+        <span class="tl__role">팀 프로젝트 <em>기여도 50%</em></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ────────── 01. BACKEND ────────── -->
+<section class="split" id="backend" aria-labelledby="backend-h">
+  <div class="split__in">
+    <div class="split__left">
+      <h2 class="split__num" id="backend-h">
+        <span class="mask" data-rise><span class="mask__in">01.</span></span>
+        <span class="mask" data-rise style="--i:1"><span class="mask__in">Backend</span></span>
+      </h2>
+    </div>
+    <div class="split__right">
+      <ol class="split__list" data-group>
+        <li style="--i:0"><a class="split__row" href="#p01"><b>01</b><span>백마택배<em>MSA 기반 국내 물류 관리 플랫폼</em></span></a></li>
+        <li style="--i:1"><a class="split__row" href="#p02"><b>02</b><span>삼인분<em>AI를 활용한 음식 주문 관리 플랫폼</em></span></a></li>
+        <li style="--i:2"><a class="split__row" href="#p03"><b>03</b><span>MetaSNS<em>소셜 네트워크 서비스</em></span></a></li>
+        <li style="--i:3"><a class="split__row" href="#p04"><b>04</b><span>2Step<em>운동화 쇼핑몰</em></span></a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div class="shell">
+
+<!-- P01 -->
+<article class="proj" id="p01">
+  <div class="proj__head">
+    <p class="proj__idx" aria-hidden="true">01</p>
+    <div class="proj__id">
+      <div class="proj__titlerow">
+        <h3 class="proj__name"><span class="mask" data-rise><span class="mask__in">백마택배</span></span></h3>
+        <p class="proj__links" data-reveal style="--i:1">
+          <a class="ghlink" href="https://github.com/leunbin/logistics-hub-service" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#gh"/></svg>logistics-hub-service
+          </a>
+        </p>
+      </div>
+      <p class="proj__tagline" data-reveal style="--i:2">17개 허브를 그래프로 다루는 MSA 물류 관리 플랫폼. Hub 도메인 설계부터 최적 경로 탐색과 재고 동시성 제어까지 담당했습니다.</p>
+    </div>
+  </div>
+
+  <div class="proj__grid">
+    <div class="side">
+      <div class="block" data-reveal>
+        <h4>기술 스택</h4>
+        <ul class="stack">
+          <li><b>Backend</b><span>Java 17, Spring Boot, Spring Data JPA, QueryDSL</span></li>
+          <li><b>Storage</b><span>PostgreSQL</span></li>
+          <li><b>Cache/MQ</b><span>Redis, Redisson, RabbitMQ</span></li>
+          <li><b>Test</b><span>JUnit5, Mockito, Spring Boot Test</span></li>
+        </ul>
+      </div>
+      <div class="block" data-reveal style="--i:1">
+        <h4>기여도</h4>
+        <p class="gauge" data-gauge="2" role="img" aria-label="기여도 30퍼센트">
+          <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><b>30%</b>
+        </p>
+        <p class="role">6인 팀 프로젝트의 팀 리더이자 Hub 도메인 담당. Hub 도메인 설계·개발과 공통 API·프로젝트 구조 설계를 주도했습니다.</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div>
+        <h4>진행 과정</h4>
+        <ul class="steps" data-group>
+          <li style="--i:0">17개 허브 연결 정보를 JVM 그래프로 구성하고 Dijkstra 최적 경로 탐색을 구현</li>
+          <li style="--i:1">Redis Cache-Aside를 적용하고, 경로 변경 이벤트 기반으로 그래프·캐시를 동기화</li>
+          <li style="--i:2">동시 재고 차감의 Lost Update를 재현한 뒤 Redisson 분산락을 적용</li>
+          <li style="--i:3">주문 처리 이력과 Unique Constraint로 재시도 요청의 멱등성을 보장</li>
+        </ul>
+      </div>
+      <div>
+        <h4>성과</h4>
+        <ul class="wins" data-group>
+          <li style="--i:0">동시 요청 10건에서 재고 불일치 <span class="fig">Expected 90 / Actual 99</span> → <span class="fig">Actual 90</span> 으로 해결</li>
+          <li style="--i:1"><span class="fig">hubId + productId</span> 단위 Lock으로 Scale-out 환경의 재고 동시성 제어</li>
+          <li style="--i:2">Redis 캐싱으로 반복적인 최단 경로 연산 최소화</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- P02 -->
+<article class="proj" id="p02">
+  <div class="proj__head">
+    <p class="proj__idx" aria-hidden="true">02</p>
+    <div class="proj__id">
+      <div class="proj__titlerow">
+        <h3 class="proj__name"><span class="mask" data-rise><span class="mask__in">삼인분</span></span></h3>
+        <p class="proj__links" data-reveal style="--i:1">
+          <a class="ghlink" href="https://github.com/leunbin/3-servings" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#gh"/></svg>3-servings
+          </a>
+        </p>
+      </div>
+      <p class="proj__tagline" data-reveal style="--i:2">AI를 활용한 음식 주문 관리 플랫폼. 결제 승인·취소 프로세스와 CI/CD·HTTPS 운영 환경을 맡았습니다.</p>
+    </div>
+  </div>
+
+  <div class="proj__grid">
+    <div class="side">
+      <div class="block" data-reveal>
+        <h4>기술 스택</h4>
+        <ul class="stack">
+          <li><b>Backend</b><span>Java 21, Spring Boot, Spring Data JPA</span></li>
+          <li><b>Infra</b><span>Docker, Docker Compose, AWS EC2, Nginx</span></li>
+          <li><b>Storage</b><span>PostgreSQL, Redis, S3</span></li>
+          <li><b>Test</b><span>JUnit</span></li>
+        </ul>
+      </div>
+      <div class="block" data-reveal style="--i:1">
+        <h4>기여도</h4>
+        <p class="gauge" data-gauge="2" role="img" aria-label="기여도 25퍼센트">
+          <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><b>25%</b>
+        </p>
+        <p class="role">6인 팀 프로젝트에서 결제 도메인과 배포 인프라를 담당했습니다. Toss Payments 결제·취소 프로세스 구현과 Docker·GitHub Actions 기반 CI/CD 환경을 구축했습니다.</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div>
+        <h4>진행 과정</h4>
+        <ul class="steps" data-group>
+          <li style="--i:0">Toss Payments API를 연동해 결제 승인·취소 프로세스를 구현</li>
+          <li style="--i:1">Docker Compose로 Spring Boot, PostgreSQL, Redis, Nginx를 독립 컨테이너로 구성</li>
+          <li style="--i:2">GitHub Actions와 Docker Hub로 빌드 → 이미지 배포 → EC2 배포를 자동화하는 파이프라인 구축</li>
+          <li style="--i:3">Nginx를 Reverse Proxy로 구성하고 SSL 인증서를 적용해 HTTPS 운영 환경 구축</li>
+        </ul>
+      </div>
+      <div>
+        <h4>성과</h4>
+        <ul class="wins" data-group>
+          <li style="--i:0">서버의 주문 정보와 결제 요청 데이터를 교차 검증해 결제 데이터 무결성 확보</li>
+          <li style="--i:1">CI/CD 구축으로 빌드부터 운영 서버 배포까지 자동화</li>
+          <li style="--i:2">Docker Compose · Nginx · SSL로 HTTPS 기반 서비스 운영 환경 구축</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- P03 -->
+<article class="proj" id="p03">
+  <div class="proj__head">
+    <p class="proj__idx" aria-hidden="true">03</p>
+    <div class="proj__id">
+      <div class="proj__titlerow">
+        <h3 class="proj__name"><span class="mask" data-rise><span class="mask__in">MetaSNS</span></span></h3>
+        <p class="proj__links" data-reveal style="--i:1">
+          <a class="ghlink" href="https://github.com/leunbin/metasns-api" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#gh"/></svg>metasns-api
+          </a>
+        </p>
+      </div>
+      <p class="proj__tagline" data-reveal style="--i:2">혼자 설계하고 구현한 소셜 네트워크 서비스. DB 병목을 줄이기 위해 조회 API에 Redis를 도입했습니다.</p>
+    </div>
+  </div>
+
+  <div class="proj__grid">
+    <div class="side">
+      <div class="block" data-reveal>
+        <h4>기술 스택</h4>
+        <ul class="stack">
+          <li><b>Backend</b><span>Java 17, Spring Boot, Spring Data JPA</span></li>
+          <li><b>Infra</b><span>Docker, Docker Compose</span></li>
+          <li><b>Storage</b><span>MySQL 8.0, Redis, MinIO</span></li>
+          <li><b>Test</b><span>JUnit, k6</span></li>
+        </ul>
+      </div>
+      <div class="block" data-reveal style="--i:1">
+        <h4>기여도</h4>
+        <p class="gauge" data-gauge="5" role="img" aria-label="기여도 100퍼센트">
+          <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><b>100%</b>
+        </p>
+        <p class="role">개인 프로젝트. 회원가입·로그인, 게시물 CRUD, 좋아요, 파일 업로드·다운로드를 모두 직접 설계하고 구현했습니다.</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div>
+        <h4>진행 과정</h4>
+        <ul class="steps" data-group>
+          <li style="--i:0">이미지·PDF 파일을 Object Storage(MinIO)에 저장하도록 분리</li>
+          <li style="--i:1">DB 병목을 방지하기 위해 좋아요와 게시물 조회 API에 Redis 적용</li>
+          <li style="--i:2">Docker로 API 서버, MySQL, Redis, MinIO를 독립 컨테이너로 구성</li>
+        </ul>
+      </div>
+      <div>
+        <h4>성과</h4>
+        <ul class="wins" data-group>
+          <li style="--i:0">Redis 캐시 적용 후 게시물 조회 평균 응답 시간 <span class="fig fig--down">22% 단축</span></li>
+          <li style="--i:1">독립 컨테이너 설계로 선택적 실행이 가능해져 개발·테스트 생산성 증가</li>
+          <li style="--i:2">Docker volume을 활용해 데이터 영속성 확보</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- P04 -->
+<article class="proj" id="p04">
+  <div class="proj__head">
+    <p class="proj__idx" aria-hidden="true">04</p>
+    <div class="proj__id">
+      <div class="proj__titlerow">
+        <h3 class="proj__name"><span class="mask" data-rise><span class="mask__in">2Step</span></span></h3>
+        <p class="proj__links" data-reveal style="--i:1">
+          <a class="ghlink" href="https://github.com/leunbin/2step" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#gh"/></svg>2step
+          </a>
+          <a class="ghlink" href="https://github.com/leunbin/performance-analyzer" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#gh"/></svg>performance-analyzer
+          </a>
+        </p>
+      </div>
+      <p class="proj__tagline" data-reveal style="--i:2">운동화 쇼핑몰의 주문 도메인. MongoDB로 만든 MVP를 MySQL로 재설계하고, 부하테스트로 병목과 락 경합을 추적했습니다.</p>
+    </div>
+  </div>
+
+  <div class="proj__grid">
+    <div class="side">
+      <div class="block" data-reveal>
+        <h4>기술 스택</h4>
+        <ul class="stack">
+          <li><b>Backend</b><span>Node.js, Express, JavaScript, Mongoose, Prisma</span></li>
+          <li><b>Storage</b><span>MongoDB → MySQL</span></li>
+          <li><b>Test</b><span>k6, Jest, Supertest</span></li>
+          <li><b>Tooling</b><span>Custom Performance Analyzer (Python, 자체 개발)</span></li>
+        </ul>
+      </div>
+      <div class="block" data-reveal style="--i:1">
+        <h4>담당</h4>
+        <p class="role">팀 프로젝트에서 주문 도메인을 담당했습니다. MVP 모델 개발부터 DB 재설계, 부하테스트와 병목 분석까지 맡았습니다.</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div>
+        <h4>진행 과정</h4>
+        <ul class="steps" data-group>
+          <li style="--i:0">Node.js와 MongoDB 기반의 MVP 모델 개발 및 주문 도메인 담당</li>
+          <li style="--i:1">주문 데이터의 관계성과 정합성을 고려해 MySQL 기반으로 재설계</li>
+          <li style="--i:2">주문 생성 로직을 트랜잭션으로 구성하고 조건부 원자적 재고 차감 적용</li>
+          <li style="--i:3">k6 부하테스트로 주문 조회·생성 성능 및 병목 분석</li>
+          <li style="--i:4">트랜잭션 실패와 동시 주문 테스트로 Rollback 및 초과 판매 방지 검증</li>
+        </ul>
+      </div>
+      <div>
+        <h4>성과</h4>
+        <ul class="wins" data-group>
+          <li style="--i:0">주문 5만 건, 200RPS 조회 부하테스트
+            <ul class="sub">
+              <li>MongoDB userId 인덱스 적용으로 P95 약 31초 → 약 3초 <span class="fig fig--down">(90.2% ↓)</span></li>
+              <li>MySQL 전환 후 약 0.3초 <span class="fig fig--down">(추가 89.6% ↓)</span></li>
+            </ul>
+          </li>
+          <li style="--i:1">주문 생성 100RPS 부하테스트
+            <ul class="sub">
+              <li>Prisma P2028 발생 → MySQL InnoDB LockWait 분석으로 동일 상품 옵션에 대한 row-level lock 경합 확인</li>
+              <li>중복 조회 제거와 조건부 재고 UPDATE 적용으로 주문 1건당 SQL 15 → 11회 <span class="fig fig--down">(26.7% ↓)</span></li>
+            </ul>
+          </li>
+          <li style="--i:2">재고 10개에 동시 주문 20건 통합 테스트에서 <span class="fig">10건 성공 · 10건 409 Conflict · 최종 재고 0</span>, 초과 판매 방지와 트랜잭션 정합성 검증</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+</div><!-- /shell -->
+
+<!-- ────────── 02. ROBOTICS ────────── -->
+<section class="split" id="robotics" aria-labelledby="robotics-h">
+  <div class="split__in">
+    <div class="split__left">
+      <h2 class="split__num" id="robotics-h">
+        <span class="mask" data-rise><span class="mask__in">02.</span></span>
+        <span class="mask" data-rise style="--i:1"><span class="mask__in">Robotics</span></span>
+      </h2>
+    </div>
+    <div class="split__right">
+      <ol class="split__list" data-group>
+        <li style="--i:0"><a class="split__row" href="#p05"><b>05</b><span>Finding Path Analysis<em>경로 탐색 알고리즘 성능 평가</em></span></a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div class="shell">
+<!-- P05 -->
+<article class="proj" id="p05">
+  <div class="proj__head">
+    <p class="proj__idx" aria-hidden="true">05</p>
+    <div class="proj__id">
+      <div class="proj__titlerow">
+        <h3 class="proj__name"><span class="mask" data-rise><span class="mask__in">Finding Path Analysis</span></span></h3>
+        <p class="proj__links" data-reveal style="--i:1">
+          <a class="ghlink" href="https://github.com/leunbin/Ros2" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#gh"/></svg>Ros2
+          </a>
+        </p>
+      </div>
+      <p class="proj__tagline" data-reveal style="--i:2">ROS2와 Gazebo 시뮬레이션 위에서 A*, Dijkstra, RRT* 세 알고리즘의 탐색 영역과 경로 생성 과정을 비교했습니다.</p>
+    </div>
+  </div>
+
+  <div class="proj__grid">
+    <div class="side">
+      <div class="block" data-reveal>
+        <h4>기술 스택</h4>
+        <ul class="stack">
+          <li><b>Env</b><span>Linux (Ubuntu 22.04), ROS2</span></li>
+          <li><b>Simulation</b><span>Gazebo</span></li>
+          <li><b>Analysis</b><span>Python (Matplotlib)</span></li>
+        </ul>
+      </div>
+      <div class="block" data-reveal style="--i:1">
+        <h4>기여도</h4>
+        <p class="gauge" data-gauge="3" role="img" aria-label="기여도 70퍼센트">
+          <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><b>70%</b>
+        </p>
+        <p class="role">시스템 아키텍처 설계와 환경 구축, 데이터 파이프라인 설계 및 시각화를 담당했습니다.</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div>
+        <h4>진행 과정</h4>
+        <ul class="steps" data-group>
+          <li style="--i:0">리눅스 환경에서 ROS2와 Gazebo를 연동해 가상 시뮬레이션 환경 구축</li>
+          <li style="--i:1">10m × 10m 영역 내 정적 장애물의 무작위 배치 시스템 구현</li>
+          <li style="--i:2">A*, Dijkstra, RRT* 등 경로 탐색 알고리즘 3종 구현</li>
+          <li style="--i:3">장애물 위치를 JSON으로 추출해 경로 탐색 알고리즘의 입력값으로 사용</li>
+          <li style="--i:4">Matplotlib으로 알고리즘의 탐색 영역과 경로 생성 과정 시각화</li>
+        </ul>
+      </div>
+      <div>
+        <h4>성과</h4>
+        <ul class="wins" data-group>
+          <li style="--i:0">Dijkstra 대비 A*가 탐색 영역을 줄여 목표 지점에 더 빠르게 도달함을 확인</li>
+          <li style="--i:1">장애물이 적은 환경에서는 A*가 가장 안정적인 경로를 생성</li>
+          <li style="--i:2">복잡도가 높고 센서를 활용하는 환경에서는 RRT*의 활용도가 높음을 확인</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+</div>
+
+<!-- ────────── 03. FRONTEND ────────── -->
+<section class="split" id="frontend" aria-labelledby="frontend-h">
+  <div class="split__in">
+    <div class="split__left">
+      <h2 class="split__num" id="frontend-h">
+        <span class="mask" data-rise><span class="mask__in">03.</span></span>
+        <span class="mask" data-rise style="--i:1"><span class="mask__in">Frontend</span></span>
+      </h2>
+    </div>
+    <div class="split__right">
+      <ol class="split__list" data-group>
+        <li style="--i:0"><a class="split__row" href="#p06"><b>06</b><span>MAPU<em>지도 동시 편집 및 공유 플랫폼</em></span></a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div class="shell">
+<!-- P06 -->
+<article class="proj" id="p06">
+  <div class="proj__head">
+    <p class="proj__idx" aria-hidden="true">06</p>
+    <div class="proj__id">
+      <div class="proj__titlerow">
+        <h3 class="proj__name"><span class="mask" data-rise><span class="mask__in">MAPU</span></span></h3>
+        <p class="proj__links" data-reveal style="--i:1">
+          <a class="ghlink" href="https://github.com/leunbin/MAPU-Frontend" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#gh"/></svg>MAPU-Frontend
+          </a>
+        </p>
+      </div>
+      <p class="proj__tagline" data-reveal style="--i:2">지도를 함께 편집하고 공유하는 플랫폼. 타임라인·탐색 페이지와 지도 편집 엔진, 자체 툴바를 구현했습니다.</p>
+    </div>
+  </div>
+
+  <div class="proj__grid">
+    <div class="side">
+      <div class="block" data-reveal>
+        <h4>기술 스택</h4>
+        <ul class="stack">
+          <li><b>Frontend</b><span>React, TypeScript, React Query, SCSS, Zustand</span></li>
+          <li><b>Env</b><span>Vercel</span></li>
+          <li><b>CI/CD</b><span>GitHub Actions</span></li>
+        </ul>
+      </div>
+      <div class="block" data-reveal style="--i:1">
+        <h4>기여도</h4>
+        <p class="gauge" data-gauge="3" role="img" aria-label="기여도 50퍼센트">
+          <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><b>50%</b>
+        </p>
+        <p class="role">타임라인 페이지, 탐색 페이지, 지도 편집 기능을 담당했습니다.</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div>
+        <h4>진행 과정</h4>
+        <ul class="steps" data-group>
+          <li style="--i:0">타임라인 페이지와 탐색 페이지 담당</li>
+          <li style="--i:1">react-intersection-observer로 무한 스크롤 구현</li>
+          <li style="--i:2">추천 키워드 기반 검색 필터링 로직과 팔로우·팔로잉 상태 관리 구현</li>
+          <li style="--i:3">카카오 맵 SDK와 연동한 지도 편집 엔진 및 자체 툴바 구현</li>
+        </ul>
+      </div>
+      <div>
+        <h4>성과</h4>
+        <ul class="wins" data-group>
+          <li style="--i:0">무한 스크롤 구현으로 사용자 경험 및 렌더링 최적화</li>
+          <li style="--i:1">자체 편집 인터페이스를 구축해 마커·선·면의 동적 스타일링 기능 구현</li>
+          <li style="--i:2">SVG-to-Base64 동적 주입 방식으로 별도 이미지 리소스 없이 마커 디자인을 실시간 변경</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+</div>
+
+</main>
+
+<!-- ────────── CONTACT ────────── -->
+<footer class="end" id="contact">
+  <div class="shell">
+    <h2 class="end__title">
+      <span class="mask" data-rise><span class="mask__in">Thank you</span></span>
+    </h2>
+    <dl class="end__grid" data-group>
+      <div style="--i:0">
+        <dt>EMAIL</dt>
+        <dd><button class="copy" type="button" data-copy="silverbin2105@gmail.com">silverbin2105@gmail.com</button></dd>
+      </div>
+      <div style="--i:1">
+        <dt>GITHUB</dt>
+        <dd><a href="https://github.com/leunbin" target="_blank" rel="noopener">github.com/leunbin</a></dd>
+      </div>
+    </dl>
+    <p class="end__foot"><span>이은빈 · 백엔드 개발자</span><span>© 2026</span></p>
+  </div>
+</footer>
+
+<button class="totop" id="totop" type="button" aria-label="맨 위로 이동">↑</button>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gh" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></symbol>
+</svg>
+
+<script src="js/main.js" defer></script>
 </body>
-<script>
-  function adjustMainMargin() {
-    const header = document.querySelector('.home-header');
-    const main = document.querySelector('.home-main');
-    if (!header || !main) return;
-    const headerHeight = header.offsetHeight;
-    main.style.marginTop = headerHeight + 'px';
-  }
-
-  window.addEventListener('load', () => {
-    const checkIncludeLoaded = setInterval(() => {
-      const header = document.querySelector('.home-header');
-      const includedHeader = header.querySelector('[data-include="layout/header.html"] > *');
-      const includedSearch = header.querySelector('[data-include="layout/searchingbar.html"] > *');
-      if (includedHeader && includedSearch) {
-        clearInterval(checkIncludeLoaded);
-        adjustMainMargin();
-        window.addEventListener('resize', adjustMainMargin);
-      }
-    }, 100);
-  });
-</script>
 </html>
