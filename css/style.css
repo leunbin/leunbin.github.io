@@ -181,7 +181,6 @@ button{font:inherit}
 }
 .tl__item:hover::before{transform:none}
 .tl__item > *{position:relative;z-index:1}
-.tl__top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .tl__top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
 .tl__date{
   display:grid;gap:2px;line-height:1.35;
@@ -242,7 +241,7 @@ button{font:inherit}
 .proj__head{display:flex;align-items:flex-start;gap:clamp(16px,3vw,40px);flex-wrap:wrap;margin-bottom:clamp(26px,4vw,44px)}
 .proj__idx{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:900;letter-spacing:-.05em;line-height:.85;color:var(--rule)}
 .proj__id{flex:1 1 320px}
-.proj__titlerow{display:flex;align-items:flex-end;gap:12px clamp(14px,2.4vw,28px);flex-wrap:wrap}
+.proj__titlerow{display:flex;align-items:flex-end;gap:12px clamp(14px,2.4vw,28px);flex-wrap:wrap;}
 .proj__name{font-size:var(--fs-h2);font-weight:900;letter-spacing:-.05em;line-height:.95}
 .proj__tagline{font-size:var(--fs-lead);font-weight:500;color:var(--muted);margin-top:14px;max-width:44ch}
 .proj__links{display:flex;gap:10px;flex-wrap:wrap;padding-bottom:.28em}
@@ -287,10 +286,19 @@ button{font:inherit}
 .fig--down{color:var(--green)}
 
 /* ── 12. 푸터 ────────────────────────────────────────── */
-.end{background:var(--slab);color:var(--white);padding:clamp(80px,12vw,160px) 0 clamp(40px,6vw,70px)}
-.end__title{font-size:var(--fs-display);font-weight:900;letter-spacing:-.055em;line-height:.85;text-transform:uppercase}
-.end__title .mask{display:block}
-.end__grid{display:flex;flex-wrap:wrap;gap:28px 64px;margin-top:clamp(36px,6vw,72px)}
+.end{
+  background:var(--slab);color:var(--white);
+  padding:clamp(40px,5vw,56px) 0 clamp(20px,3vw,28px);
+}
+.end__grid{
+  display:flex;flex-wrap:wrap;gap:20px 56px;margin-top:0;
+}
+.end__foot{
+  margin-top:clamp(24px,3vw,36px);padding-top:16px;
+  border-top:1px solid #2a2a2a;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:.82rem;color:#9aa0a6;
+}
 .end__grid dt{font-size:var(--fs-meta);font-weight:800;letter-spacing:.14em;color:#9aa0a6;margin-bottom:6px}
 .end__grid dd{margin:0;font-size:clamp(1rem,2vw,1.3rem);font-weight:700;letter-spacing:-.02em}
 .end__grid a{text-decoration:none;border-bottom:1px solid #5a6167;padding-bottom:2px;transition:border-color .2s ease}
@@ -298,7 +306,6 @@ button{font:inherit}
 .copy{border:0;background:transparent;color:inherit;font-weight:700;cursor:pointer;border-bottom:1px solid #5a6167;padding:0 0 2px;transition:color .2s ease,border-color .2s ease}
 .copy:hover{border-bottom-color:#fff}
 .copy[data-done="true"]{color:#8fd0a8;border-bottom-color:#8fd0a8}
-.end__foot{margin-top:clamp(56px,9vw,110px);padding-top:20px;border-top:1px solid #2a2a2a;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:#9aa0a6}
 
 .totop{
   position:fixed;right:clamp(16px,3vw,32px);bottom:clamp(16px,3vw,32px);z-index:55;
