@@ -245,8 +245,8 @@
         <ul class="wins" data-group>
           <li style="--i:0">동시 요청 10건에서 재고 불일치 <span class="fig">Expected 90 / Actual 99</span> → <span class="fig">Actual 90</span> 으로 해결</li>
           <li style="--i:1"><span class="fig">hubId + productId</span> 단위 Lock으로 Scale-out 환경의 재고 동시성 제어</li>
-          <li style="--i:2">최단 경로 Redis Cache-Aside 적용 후 100VU에서 p95 <span class="fig">465.9ms → 304.2ms</span> <span class="fig fig--down">(34.7% ↓)</span>, 처리량은 <span class="fig">798 → 561 RPS</span> <span class="fig fig--down">(30% ↓)</span></li>
-          <li style="--i:3">cgroup CPU Throttling 측정(1VU 기준 <span class="fig">0회 → 35회</span>)으로 추가 비용의 원인이 네트워크가 아닌 <span class="fig">역직렬화 CPU</span>임을 규명</li>
+          <li style="--i:2">최단 경로 Redis Cache-Aside 적용 후 100VU에서 p95 <span class="fig">465.9ms → 304.2ms</span> <span class="fig fig--down">(34.7% ↓)</span>, 반면 처리량은 <span class="fig">798 → 561 RPS</span> <span class="fig fig--down">(30% ↓)</span></li>
+          <li style="--i:3">상반된 성능 지표를 추가 분석해 1VU에서도 cgroup <span class="fig">CPU Throttling 0회 → 35회</span>를 확인, 캐시 적용에 따른 <span class="fig">CPU 오버헤드 가능성</span>임을 식별</li>
           <li style="--i:4">캐시 사용 여부를 환경변수로 분리해 <span class="fig">트래픽 특성에 따라 선택 가능</span>하도록 구성</li>
         </ul>
       </div>
